@@ -1,11 +1,52 @@
+/* Cambiar el fondo del cuerpo a un color llamativo */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: yellow; /* Color de fondo llamativo */
+    color: black;
   }
   
+  /* Cambiar el color del encabezado */
   h1 {
-    color: red;
-    width: 1000px;
+    color: red; /* Color del texto llamativo */
+    font-size: 50px; /* Tamaño de fuente grande */
+    text-align: center; /* Centrar el texto */
+  }
+  
+  /* Añadir borde y sombra a las imágenes */
+  img {
+    border: 10px solid green; /* Borde grueso y color llamativo */
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.5); /* Sombra para las imágenes */
+  }
+  
+  /* Cambiar los enlaces */
+  a {
+    color: blue; /* Color llamativo para enlaces */
+    font-weight: bold; /* Negrita para enlaces */
+    text-decoration: none; /* Sin subrayado */
+    background-color: orange; /* Fondo llamativo */
+    padding: 5px; /* Espaciado interno */
+  }
+  
+  /* Estilos para párrafos */
+  p {
+    background-color: pink; /* Fondo llamativo */
+    border: 2px dashed purple; /* Borde llamativo */
+    padding: 10px; /* Espaciado interno */
+    font-size: 18px; /* Tamaño de fuente */
+  }
+  
+  /* Añadir animación a un div con id 'animate' */
+  #animate {
+    width: 100px;
+    height: 100px;
+    background-color: cyan;
+    position: relative;
+    animation: mymove 5s infinite;
+  }
+  
+  @keyframes mymove {
+    0% {left: 0px;}
+    50% {left: 200px;}
+    100% {left: 0px;}
   }
   
