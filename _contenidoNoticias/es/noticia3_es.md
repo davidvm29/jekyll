@@ -10,7 +10,7 @@ ult_fecha_modificada: Martes, 03 Octubre 2023 13:14
 Lugar_publicacion: Actualidad_Universitaria
 hastag: "#Aupa Universidades_Públicas_de_Andalucía #Titulaciones #ordenación_académica #universidades_privadas"
 url_image: /assets/img/noticia3.jpg
-contador_visitas: '<script type="text/javascript" src="http://www.websitegoodies.com/counter.php?id=75448&color=%231253bd"></script>'
+contador_visitas: '<script type="text/javascript" src="https://www.websitegoodies.com/counter.php?id=75448&color=%231253bd"></script>'
 ---
 
 ### Desde AUPA se pretende “hacer una oferta lógica, coherente y responsable” de títulos y se pide “calidad, estrategia e igualdad de condiciones” respecto a las universidades privadas
