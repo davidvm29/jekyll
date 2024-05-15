@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UCO-i02vimod</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+</head>
+<body>
+  {% assign archivos = site.pages | where_exp: "item", "item.path contains 'contenidoNoticias'" %}
+{% for archivo in archivos %}
+  {% if page.path == archivo.path %}
+    {% assign permalink = archivo.permalink | replace_first: '_es', '' | replace_first: '_en', '' %}
+  {% endif %}
+{% endfor %}
+
+  <div id="top-bar">
+					<ul id="idiomas">
+						<li class="activo"><a href="{{ permalink}}_es.html">ES</a></li>
+						<li><a href="{{ permalink }}_en.html">EN</a></li>
+					</ul>
+					<div id="buscar">
+							<a class="boton-buscar"></a>
+							<label for="q" style="display:none">Buscar</label>
+							<input type="text" size="10" placeholder="" name="q" id="q">
+							<input type="button" value="{{ site.data[page.idioma].buscar }}" class="btn-buscar" onclick="buscarYRedirigir()">
+					</div>
+          <ul class="nav justify-content-center" id="results-container"></ul>
+				</div>
+
+        
+
+  <!-- Botones de enlace a páginas externas -->
+  <div class="external-buttons">
+    <a href="/index.html"><img src="/assets/img/asset0.png" alt="Botón 1"></a>
+    <a href="/acercanuevo.html"><img src="/assets/img/asset1.png" alt="Botón 2"></a>
+
+  </div>
+
+  <nav class="row" id="menu-principal"><div id="menu-button" style="display:block;" bis_skin_checked="1">Menú</div>
+    <ul class="open">
+        <li><a href="/index.html">{{ site.data[page.idioma].inicio}}</a></li>
+        <li><a href="#">{{ site.data[page.idioma].vida_academica}}</a></li>
+        <li><a href="#">{{ site.data[page.idioma].ciencia}}</a></li>
+        <li><a href="#">{{ site.data[page.idioma].institucional}}</a></li>
+        <li><a href="#">{{ site.data[page.idioma].internacional}}</a></li>
+        <li><a href="#">{{ site.data[page.idioma].becas}}</a></li>
+        <li><a href="#">{{ site.data[page.idioma].emprendimiento}}</a></li>
+        <li><a href="#">{{ site.data[page.idioma].cultura}}</a></li>
+        <li><a href="#">{{ site.data[page.idioma].vida_universitaria}}</a></li>
+        <li><a href="#">{{ site.data[page.idioma].deporte}}</a></li>
+    </ul>
+</nav>
+
+<section id="principal" class="row">
+	<!-- Contenido principal existente... -->
+	{% include breadcrumbs.html %}
+  
+	<section id="content" class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+	  <!-- Contenido principal existente... -->
+	  <div class="itemHeader">
+		<!-- Date created -->
+		<span class="itemDateCreated">{{page.fecha| replace: '_', ' '}}</span>
+		<!-- Item title -->
+		<h2 class="itemTitle"> {{ page.title | replace: '_', ' ' }}</h2>
+		<!-- Item Author -->
+		<span class="itemAuthor"> {{ site.data[page.idioma].escrito}}: {{page.autor}}</span>
+	  </div>
+
+	  <div class="itemBody">
+		<figure class="imagen_contenido_noticia">
+		  <a data-k2-modal="image" href="/servicios/actualidad/media/k2/items/cache/a8111bab4c62ab7868529ac61cb9bb35_XL.jpg" title="Clic para vista previa de la imagen">
+			<img src={{page.url_image}} />
+		  </a>
+		  <figcaption class="pie_contenido_noticia">{{page.pie_foto}}</figcaption>
+		</figure>
+
+		<div class="texto_noticia">
+		  {{content}}
+		</div>
+	  </div>
+    <div class="InfoAdd">
+      <h3>{{ site.data[page.idioma].informacion_adicional}}</h3>
+    </div>
+    <div class="ultfechamodificada">
+      <span>{{ site.data[page.idioma].fecha_modificada}} {{page.ult_fecha_modificada}}</span>
+    </div>
+    {{page.contador_visitas}}
+    
+    <div style="margin-top: 20px;">{% include share-buttons.html %}</div>
+
+    <div style="margin-bottom: 20px;"class="hastag">
+      <span>Publicado en <a href="#">{{page.Lugar_publicacion | replace: '_', ' '}}</a></span>
+      <span>Etiquetado como 
+        <ul class="itemTags">
+          {% assign hastags = page.hastag | split: ' ' %}
+          {% for tag in hastags %}
+            {% if tag contains '_' %}
+              {% assign modifiedTag = tag | replace: '_', ' ' %}
+              <li><a href="#">{{ modifiedTag }}</a></li>
+            {% else %}
+              <li><a href="#">{{ tag }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+    </span>
+    </div>
+
+    <div class="itemRelated">
+      <h3>{{ site.data[page.idioma].articulos_relacionados}}</h3>
+      <ul>
+        {% assign current_tags = page.hastag | split: ' ' %}
+        {% for post in site.contenidoNoticias %}
+          {% if post.idioma == page.idioma %}
+            {% assign post_tags = post.hastag | split: ' ' %}
+            {% assign common_tags = "" %}
+            {% assign remaining_tags = current_tags %}
+            
+            {% for tag in post_tags %}
+              {% if remaining_tags contains tag %}
+                {% assign common_tags = common_tags | append: tag | append: ' ' %}
+                {% assign remaining_tags = remaining_tags | remove: tag | remove: ' ' %}
+              {% endif %}
+            {% endfor %}
+            
+            {% if common_tags.size > 0 and remaining_tags.size > 0 and post.url != page.url %}
+              <li>
+                <a href="{{ post.url }}">{{ post.title | replace: '_', ' ' }}</a>
+              </li>
+            {% endif %}
+          {% endif %}
+        {% endfor %}
+      </ul>
+      
+    </div>
+
+    <div class="itemNavigation">
+      <span class="itemNavigationTitle">{{ site.data[page.idioma].mas_categoria}}</span>
+  
+{% assign current_tags = page.Lugar_publicacion | split: ' ' %}
+{% assign link_count = 0 %}
+
+{% for post in site.contenidoNoticias %}
+
+  {% if post.idioma == page.idioma %}
+    {% assign post_tags = post.Lugar_publicacion | split: ' ' %}
+    {% assign common_tags = "" %}
+    {% assign remaining_tags = current_tags %}
+    
+    {% for tag in post_tags %}
+      {% if remaining_tags contains tag %}
+        {% assign common_tags = common_tags | append: tag | append: ' ' %}
+        {% assign remaining_tags = remaining_tags | remove: tag | remove: ' ' %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if common_tags.size > 0 and remaining_tags.size > 0 and post.url != page.url and link_count < 4 %}
+      {% assign link_count = link_count | plus: 1 %}
+      <a href="{{ post.url }}">{{ post.title | replace: '_', ' ' }}</a>
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+
+    </div>
+
+    <div class="itemBackToTop">
+      <a class="k2Anchor" href="javascript:void(0);" onclick="scrollToTop()"> {{ site.data[page.idioma].volver_arriba}}</a>
+    </div>
+    
+    <script>
+      function scrollToTop() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+      </script>
+  </section>
+  
+	<section class="content-wrapper col-lg-3 col-md-12 col-sm-12 col-xs-12">
+    <div class="row mb-3 servicios_recursos"> <a href="#" target="_blank" ><span class="icon-info"></span> {{ site.data[page.idioma].servicios_recursos}}</a></div>
+    <div class="container-calendar">
+      <table id="calendar" class="calendar">
+        <thead>
+          <tr>
+            <td class="calendarNavMonthPrev"><a id="prevMonthLink" class="calendarNavLink" href="#">&laquo;</a></td>
+            <td id="currentMonth" class="calendarCurrentMonth" colspan="5">Febrero 2024</td>
+            <td class="calendarNavMonthNext"><a id="nextMonthLink" class="calendarNavLink" href="#">&raquo;</a></td>
+          </tr>
+          <tr>
+            <td class="calendarDayName" style="width:14%">Lun</td>
+            <td class="calendarDayName" style="width:14%">Mar</td>
+            <td class="calendarDayName" style="width:14%">Mier</td>
+            <td class="calendarDayName" style="width:14%">Jue</td>
+            <td class="calendarDayName" style="width:14%">Vie</td>
+            <td class="calendarDayName" style="width:14%">Sáb</td>
+            <td class="calendarDayName" style="width:14%">Dom</td>
+          </tr>
+        </thead>
+        <tbody id="calendarBody">
+          {% assign currentDay = site.time | date: "%Y-%m-%d" %}
+          {% assign noticias = site.contenidoNoticias | sort: 'fecha' %}
+          {% assign fechanoticia = "" | split: "," %}
+
+          {% for noticia in noticias %}
+            {% if noticia.idioma == page.idioma %}
+              {% assign fechaNoticia = noticia.fecha | date: "%d/%m/%Y" %}
+              {% assign fechanoticia = fechanoticia | push: fechaNoticia | push: " " | push: noticia.url | push: " " | push: noticia.title | push: " " | push: noticia.fecha | push: " " | push: noticia.Lugar_publicacion | push: " " %}
+            {% endif %}
+          {% endfor %}
+
+        </tbody>
+      </table>
+    </div>
+    
+  <div class="convocatorias-container">
+  <div class="convocatorias">
+    <h3 class="secciones-noticias">{{ site.data[page.idioma].convocatorias}}</h3>						
+    
+    <div class="item-secciones">
+      <div >
+        <a class="enlaces-secciones" href="/servicios/actualidad/convocatorias-abiertas/676-iii-congreso-internacional-nosotros-proponemos-ciudadania-sostenibilidad-e-innovacion-en-la-educacion-ciudad-real-17-20-abril-de-2024">
+          {{ site.data[page.idioma].convocatoria1}}
+        </a>
+      </div>
+      <div style="font-family: Lato, sans-serif; font-size: 13px; color: #3E3E3D"> {{ site.data[page.idioma].mas_info}}</div>
+      <div style="text-align: right;">
+        <a style="font-family: Lato, sans-serif; font-size: 13px; font-style: italic; color: #6E6E6E; text-decoration: none; margin: 0 10px 0 0;" href="/servicios/actualidad/convocatorias-abiertas/676-iii-congreso-internacional-nosotros-proponemos-ciudadania-sostenibilidad-e-innovacion-en-la-educacion-ciudad-real-17-20-abril-de-2024">
+          {{ site.data[page.idioma].leer_mas}}
+        </a>
+      </div>
+      <div style="clear:both"></div>
+    </div>
+
+    <div class="item-secciones">
+      <div >
+        <a class="enlaces-secciones" href="/servicios/actualidad/convocatorias-abiertas/676-iii-congreso-internacional-nosotros-proponemos-ciudadania-sostenibilidad-e-innovacion-en-la-educacion-ciudad-real-17-20-abril-de-2024">
+          {{ site.data[page.idioma].convocatoria2}}
+        </a>
+      </div>
+      <div style="font-family: Lato, sans-serif; font-size: 13px; color: #3E3E3D"> {{ site.data[page.idioma].info_general}}<a class="enlaces-secciones" href="https://www.rec24.es/informacion-general" target="_blank" rel="noopener noreferrer">https://www.rec24.es/informacion-general</a> 
+        <a class="enlaces-secciones"href="https://www.rec24.es/inscripciones" target="_blank" rel="noopener noreferrer">{{ site.data[page.idioma].inscripciones}}</a>				</div>
+      <div style="text-align: right;">
+        <a style="font-family: Lato, sans-serif; font-size: 13px; font-style: italic; color: #6E6E6E; text-decoration: none; margin: 0 10px 0 0;" href="/servicios/actualidad/convocatorias-abiertas/676-iii-congreso-internacional-nosotros-proponemos-ciudadania-sostenibilidad-e-innovacion-en-la-educacion-ciudad-real-17-20-abril-de-2024">
+          {{ site.data[page.idioma].leer_mas}}
+        </a>
+      </div>
+      <div style="clear:both"></div>
+    </div>
+
+    <div class="item-secciones">
+      <div >
+        <a class="enlaces-secciones" href="/servicios/actualidad/convocatorias-abiertas/676-iii-congreso-internacional-nosotros-proponemos-ciudadania-sostenibilidad-e-innovacion-en-la-educacion-ciudad-real-17-20-abril-de-2024">
+          {{ site.data[page.idioma].convocatoria3}}
+        </a>
+      </div>
+      <div style="font-family: Lato, sans-serif; font-size: 13px; color: #3E3E3D">{{ site.data[page.idioma].convocatoria4_1}}<a class="enlaces-secciones"href="http://www.uco.es/vidauniversitaria/cooperacion/uco-refugio/255-formulario-para-propuestas-de-actividades-sobre-refugio-ucrania" target="_blank" rel="noopener noreferrer">{{ site.data[page.idioma].formulario}}</a> 
+        {{ site.data[page.idioma].convocatoria4_2}}</div>
+      <div style="text-align: right;">
+        <a style="font-family: Lato, sans-serif; font-size: 13px; font-style: italic; color: #6E6E6E; text-decoration: none; margin: 0 10px 0 0;" href="/servicios/actualidad/convocatorias-abiertas/676-iii-congreso-internacional-nosotros-proponemos-ciudadania-sostenibilidad-e-innovacion-en-la-educacion-ciudad-real-17-20-abril-de-2024">
+          {{ site.data[page.idioma].leer_mas}}
+        </a>
+      </div>
+      <div style="clear:both"></div>
+    </div>
+    
+  </div>
+  </div>
+
+  <div class="container-enlinea">
+    <h3 class="secciones-noticias"id="interes">{{ site.data[page.idioma].informacion_linea}}</h3>
+    <nav>
+      <div class="noticias-interes"><a class="enlaces-interes" href="/servicios/actualidad/boletines" >{{ site.data[page.idioma].boletin}}</a></div>
+      <div class="noticias-interes"><a class="enlaces-interes" href="/servicios/actualidad/congresos" >{{ site.data[page.idioma].congresos}}</a></div>
+      <div class="noticias-interes"><a class="enlaces-interes" href="/servicios/actualidad/kiosko-digital" >{{ site.data[page.idioma].uco_medios}}</a></div>
+      <div class="noticias-interes"><a class="enlaces-interes" href="/servicios/actualidad/uco-imagen-corporativa" >{{ site.data[page.idioma].imagen_corporativa}}</a></div>
+      <div class="noticias-interes"><a class="enlaces-interes" href="/servicios/actualidad/enlaces" >{{ site.data[page.idioma].enlaces}}</a></div>
+      <div class="noticias-interes"><a class="enlaces-interes" href="/servicios/actualidad/suscripciones" >{{ site.data[page.idioma].suscribete}}</a></div>
+      <div class="noticias-interes"><a class="enlaces-interes" href="https://www.uco.es/servicios/comunicacion/" target="_blank" >{{ site.data[page.idioma].hemeroteca}}</a></div>
+      <div class="noticias-interes"><a class="enlaces-interes" href="https://photos.google.com/u/1/albums" target="_blank" >{{ site.data[page.idioma].galeria_imagenes}}</a></div>
+    </nav>
+  </div>
+    
+  <div class="container-enlinea">
+    <h3 class="secciones-noticias"id="interes">{{ site.data[page.idioma].interes}}</h3>
+    <nav>
+      <div class="noticias-interes"><a class="enlaces-interes" href="/servicios/actualidad/boletines" >{{ site.data[page.idioma].carta_servicios}}</a></div>
+      <div class="noticias-interes"><a class="enlaces-interes" href="/servicios/actualidad/congresos" >{{ site.data[page.idioma].quienes_somos}}</a></div>
+      <div style="height:48px;" class="noticias-interes"><a class="enlaces-interes" href="/servicios/actualidad/kiosko-digital" >{{ site.data[page.idioma].buzon_quejas}}</a></div>
+      <div class="noticias-interes"><a class="enlaces-interes" href="/servicios/actualidad/uco-imagen-corporativa" >{{ site.data[page.idioma].consultas_accesibilidad}}</a></div>
+    </nav>
+  </div>
+  <a href="#"><img style="height: 100px; width: 282px;"src="/assets/img/como-llegar.jpg"></a>
+	</section>
+</section>
+
+  
+
+  <footer style="margin-top: 20px;" id="footer" >
+    <div id="footer-bar">
+        <nav class="menu-footer">
+
+<a href="/servicios/actualidad/accesibilidad" >{{ site.data[page.idioma].accesibilidad}}</a> · <a href="/servicios/actualidad/comunicacion-contacto" >{{ site.data[page.idioma].contacto}}</a> · <a href="/servicios/actualidad/mapa-web" >{{ site.data[page.idioma].mapa_web}}</a>	</nav>
+
+
+      
+      <div id="footer-right">
+        <a href="http://www.uco.es/" id="logo-footer"><img src="https://www.uco.es/servicios/actualidad//templates/uco/images/logo-footer.png" width="50" height="50" alt="Universidad de Córdoba" title="Universidad de Córdoba" /></a>
+        <!-- Redes sociales -->
+        <ul class="redes-sociales">
+<li><a href="http://www.facebook.com/universidadcordoba" target="_blank" rel="nofollow" class="icon-facebook"></a></li>														<li><a href="http://twitter.com/Univcordoba" target="_blank" rel="nofollow" class="icon-twitter"></a></li>														<li><a href="https://www.instagram.com/universidaddecordoba/" target="_blank" rel="nofollow" class="icon-instagram"></a></li>														<li><a href="http://www.linkedin.com/company/universidad-de-cordoba" target="_blank" rel="nofollow" class="icon-linkedin"></a></li>														<li><a href="http://www.uco.es/servicios/comunicacion/actualidad/?format=feed" target="_blank" rel="nofollow" class="icon-rss"></a></li>														<li><a href="https://www.flickr.com/photos/univcordoba/" target="_blank" rel="nofollow" class="icon-flickr"></a></li>														<li><a href="https://www.youtube.com/user/univcordoba" target="_blank" rel="nofollow" class="icon-youtube"></a></li>																																										<li><a href="https://www.tiktok.com/@universidadcordoba?lang=es" target="_blank" rel="nofollow" class="icon-tiktok"> </a></li>
+        </ul>
+      </div>
+      <div style="clear:both"></div>
+    </div>
+    <div style="clear:both"></div>
+  </footer> 
+
+<script>
+  var fechanoticia = "{{ fechanoticia }}";
+</script>
+<script src="/assets/js/calendar.js"></script>
+<script src="/assets/js/script.js"></script>
+<script src="/assets/js/search.js" type="text/javascript"></script>
+
+<script>
+  var idioma = "{{page.idioma}}";
+</script>
+<script src="/assets/js/configuracionBusqueda.js" type="text/javascript"></script>
+
+</body>
+</html>

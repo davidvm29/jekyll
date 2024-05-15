@@ -1,0 +1,86 @@
+.enlaces a{
+    font-family: 'Montserrat',sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    color:#23527C;
+    list-style-type:none !important;
+    display: block;
+    text-decoration: none;
+    margin-bottom: 10px;
+  
+  }
+  .enlaces li{
+    list-style-type: none;
+  }
+  .comunicacion{
+    font-size: 18px;
+    font-weight: bold;
+    color:#000;
+  }
+  #compra a{
+    padding-left: 30px;
+  }
+  #subvencion a{
+    padding-left: 60px;
+  }
+  #proyectos a{
+    padding-left: 90px;
+  }
+
+#mi-clase p{
+color:#239e2d;
+background-color: brown;
+}
+.sangrias{
+    padding-left: 30px;
+    font-family: 'Lato';
+    font-size: 14px;
+    line-height: 20px;
+    padding: 0 0 0 30px;
+  }
+  
+  
+  
+  #instrucciones{
+    margin-bottom: 10px;
+  }
+  
+  em{
+    font-style: italic;
+    font-size: 14px;
+    padding-left: 60px;
+    font-family: 'Montserrat',sans-serif;
+  }
+  
+  #contenido table{ max-width: 100%; margin: 20px 0 30px; display: table; }
+  #contenido table th, #contenido table td{ border: solid thin #239e2d; padding: 10px;  }
+  #contenido table th{ background: #239e2d; color: #fff; font-weight: bold; border: solid thin #fff;  }
+  #contenido table thead th, #contenido table tfoot th{ background: #239e2d; color: #fff; font-weight: bold; border: solid thin #fff; border-top: solid thin #239e2d; border-bottom: solid thin #239e2d; }
+  #contenido table thead th:first-child, #contenido table tfoot th:first-child{ border-left: solid thin #239e2d; }
+  #contenido table thead th:last-child, #contenido table tfoot th:last-child{ border-right: solid thin #239e2d; }
+  
+  table, table.table-responsive{ display: table; }
+  table td, table th{ display: table-cell !important; }
+  table thead, table tbody{ width: 100% !important; }
+  table tr{ display: table-row !important; width: 100% !important; }
+  table, #contenido table { display: table !important; }
+  .col-sm-3{
+  padding-left: 10px;  padding-right: 10px;
+  }
+  @media only screen and (max-width:1200px){
+  #primeratabla{
+      height: 170px;
+      width: 539.156px;
+      padding: 0 10px 0 10px;
+      position: relative;
+      }
+    .table-responsive{
+      border:1px solid #DDDDDD
+    }
+  #segundatabla{
+    height: 260px;
+    width: 539.156px;
+    padding: 0 10px 0 10px;
+    position: relative;
+    }
+  }

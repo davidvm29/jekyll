@@ -1,0 +1,172 @@
+noticias: NOTICIAS
+buscar: Buscar
+menu: Menú
+conoce_uco: Conoce la UCO
+historia: Historia
+organizacion: Organización institucional
+gobierno: Equipo de Gobierno
+consejo_gobierno: Consejo de Gobierno
+claustro: Claustro
+secretaria_general: Secretaría General
+gerencia: Gerencia
+asesoria_juridica: Asesoría Jurídica
+defensoria_universitaria: Defensoría Universitaria
+consejo_social: Consejo Social
+consejo_estudiantes: "Consejo de Estudiantes"
+gestion_administrativa: Gestión administrativa
+normativa: Normativa
+centros_departamentos: Centros, campus y departamentos
+vet: Facultad de Veterinaria
+agronomia_montes: Escuela Técnica Superior de Ingeniería Agronómica y de Montes
+medicina_enfermeria: Facultad de Medicina y Enfermería
+ciencias: Facultad de Ciencias
+filosofia_letras: Facultad de Filosofía y Letras
+derecho_ciencias: Facultad de Derecho y Ciencias Económicas y Empresariales
+educacion_psicologia: Facultad de Ciencias de la Educación y Psicología
+politecnica_cordoba: Escuela Politécnica Superior de Córdoba
+ciencias_trabajo: Facultad de Ciencias del Trabajo
+politecnica_belmez: Escuela Politécnica Superior de Belmez
+posgrado: Instituto de Estudios de Posgrado
+magisterio: Centro de Magisterio "Sagrado Corazón" (Centro Adscrito)
+fisidec: Centro Universitario Fisidec (Centro Adscrito)
+intergeneracional: Centro Intergeneracional 'Profesor Francisco Santisteban'
+departamentos: Departamentos
+campus_rabanales: Campus de Rabanales
+biodiversidad_rabanales: Biodiversidad en Rabanales
+datos_cifras: Facts and figures
+como_llegar: Cómo llegar
+info_estudiantes: Información para estudiantes
+portal_estudiantes: Portal de Información para Estudiantes (PIE)
+grados: Grados
+master_doctorado: Másteres y Doctorado
+titulos_propios: Títulos propios
+formacion_empleabilidad: Formación continua, Empleabilidad y Emprendimiento
+practicas_empleo: Prácticas y Empleo
+servicios_academicos: Servicios de Gestión Académica
+catedras_aulas_fundaciones: Cátedras, aulas y fundaciones
+ucodigital: UCOdigital
+campus_andaluz_virtual: Campus Andaluz Virtual
+preinscripcion: Preinscripción
+alumnos_internacionales: Alumnos Internacionales
+etesis: eTesis
+docencia: Docencia
+moodle: Moodle
+sigma_campus_docente: SIGMA Campus Docente
+e_guiado: E-guiado
+ucomunidad: UCOMUNIDAD
+reserva_aulas: Sistema de Reserva de Aulas
+investigacion: Investigación
+portal_investigacion: Portal de Investigación
+proyectos_internacionales: Proyectos Internacionales
+apoyo_investigacion: Servicio Central de Apoyo a la Investigación
+animales_experimentacion: Servicio de Animales de Experimentación
+cultura_cientifica: Unidad de Cultura Cientifica y de la Innovación
+grupos_investigacion: Grupos de Investigación
+hrs4r: HRS4R
+transferencia: Transferencia
+portal_transferencia: Portal de Transferencia
+plan_propio_galileo: Plan Propio de Transferencia Galileo
+buscador_oferta_tecnologica: Buscador de oferta tecnológica
+resumen_oferta_tecnologica: Documento resumen de oferta tecnológica de la UCO
+colaboracion_empresas: Colaboración con empresas
+contratos_universidad_empresa: Contratos Universidad Empresa
+creacion_ebc: Creación de EBC´s
+proyectos_colaborativos: Proyectos Colaborativos
+catedras_universidad_empresas: Cátedras Universidad-Empresas
+quien_quien_transferencia: "¿Quién es quién en tareas de transferencia?"
+entrevistas_grupos_investigacion: Entrevistas a grupos de investigación de la UCO
+videos_investigadores_biotecnologia: Vídeos de investigadores relacionados con el área de la Biotecnología
+servicios_vida_universitaria: Servicios y vida universitaria
+tienda_uco_online: Tienda UCO online
+alojamiento: Alojamiento
+archivo_registro_administracion: Archivo Registro y Administración Electrónica
+area_cooperacion_solidaridad: Área de Cooperación y Solidaridad
+gestion_economica: Gestión Económica
+area_inclusion: Área de Inclusión
+biblioteca: Biblioteca
+calidad: Calidad
+contratacion_patrimonio: Contratación y Patrimonio
+ucocultura: UCOCultura
+deporte: Deportes
+gabinete_comunicacion: Gabinete de Comunicación
+ucoidiomas: UCOidiomas
+igualdad: Igualdad
+ofertas_comunidad_universitaria: Ofertas Comunidad Universitaria
+otras_webs_blogs: Otras webs y blogs
+practicas_empleo_2: Prácticas y empleo
+promocion_salud: Promoción de la Salud
+protocolo: Protocolo
+publicaciones: Publicaciones
+secretaria_virtual: Secretaría Virtual
+control_interno: Servicio de Control Interno
+informatica: Servicio de Informática
+prevencion_proteccion: Servicio de Prevención y Protección
+prevencion_riesgos_proteccion_radiologica: Prevención de Riesgos y Protección Radiologica
+proteccion_ambiental: Protección Ambiental
+ucompras: UCOMPRAS
+apoyo_tecnologico: Unidad de Apoyo Tecnológico a Centros, Departamentos y Servicios
+atencion_psicologica: Unidad de Atención Psicológica
+servicios_generales: Unidad de Servicios Generales
+unidad_tecnica: Unidad Técnica
+internacional: Internacional
+convenios_internacionales: Convenios Internacionales
+actualidad_universitaria: Actualidad Universitaria
+agenda: Agenda
+ciencia_uco: Ciencia en la UCO
+interes: DE INTERÉS
+sede_electronica: 'sede electrónica '
+transparencia_resp_social: 'transparencia y resp. social '
+bouco: 'BOUCO '
+factura_electronica: 'factura electrónica '
+portal_personal: 'portal del personal '
+ceia3: 'ceiA3 '
+mapa_web: "Mapa Web"
+accesibilidad: "Accesibilidad"
+contacto: "Contacto"
+buscar_personas: "Buscar Personas"
+correo: "Correo"
+sistema_integridad_uco: "Sistema de Integridad UCO"
+proteccion_datos: "Protección de Datos"
+inicio: Inicio
+vida_academica: "Vida Académica"
+ciencia: "ciencia"
+institucional: "Institucional"
+becas: "Becas y Empleo"
+emprendimiento: "Emprendimiento"
+cultura: "Cultura"
+vida_universitaria: "Vida Universitaria"
+escrito: "Escrito por"
+informacion_adicional: "INFORMACIÓN ADICIONAL"
+fecha_modificada: "Modificado por última vez en"
+comparte: "Comparte en"
+articulos_relacionados: "Artículos relacionados (por etiqueta)"
+informacion_linea: "INFORMACIÓN EN LÍNEA"
+volver_arriba: "Volver arriba"
+mas_categoria: "Más en esta categoría:"
+servicios_recursos: "SERVICIOS Y RECURSOS COMUNES DE LA UNIVERSIDAD DE CÓRDOBA"
+convocatorias: "CONVOCATORIAS ABIERTAS"
+convocatoria1: "» III Congreso Internacional ¡Nosotros Proponemos! Ciudadanía, sostenibilidad e innovación en la educación (Ciudad Real, 17 - 20 abril de 2024)"
+mas_info: "Más información en la web ..."
+leer_mas: "» Leer más..."
+convocatoria2: "» 8ª Jornadas Red Española de Compostaje (2 -4 octubre de 2024)"
+info_general: "Información general de las jornadas en"
+inscripciones: "Inscripciones"
+convocatoria3: "» Área de Cooperación y Solidaridad: iniciativa para ofrecer a la comunidad universitaria de la UCO la posibilidad de solicitar ayuda económica para la organización de acciones de formación y/o sensibilización vinculadas a la situación derivada del conflict"
+convocatoria4_1: "Para hacer una propuesta es preciso rellenar el siguiente "
+convocatoria4_2: "Ayudas financiadas por las subvenciones del Ministerio..."
+formulario: "FORMULARIO"
+boletin: "BOLETÍN DE NOVEDADES"
+congresos: "CONGRESOS"
+uco_medios: "LA UCO EN LOS MEDIOS"
+imagen_corporativa: "IMAGEN CORPORATIVA"
+enlaces: "ENLACES"
+suscribete: "SUSCRÍBETE A NOVEDADES"
+hemeroteca: "HEMEROTECA"
+galeria_imagenes: "GALERÍA DE IMÁGENES"
+carta_servicios: "CARTA DE SERVICIOS"
+quienes_somos: "QUIENES SOMOS"
+buzon_quejas: "BUZÓN DE QUEJAS, SUGERENCIAS Y FELICITACIONES"
+consultas_accesibilidad: "CONSULTAS SOBRE ACCESIBILIDAD"
+cita_previa: "Solicitar cita previa"
+estudios_postgrado: "Instituto de Estudios de Posgrado"
+resultados_busqueda: "Resultados de la búsqueda"

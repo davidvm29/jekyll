@@ -1,20 +1,350 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ page.title }}</title>
-  <link rel="stylesheet" href="{{ '/assets/css/styles.css' | relative_url }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UCO-i02vimod</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+  <script src="/assets/js/script.js"></script>
 </head>
 <body>
-  <header>
-    <h1>{{ site.title }}</h1>
-  </header>
-  <main>
-    {{ content }}
-  </main>
-  <footer>
-    <p>&copy; {{ site.time | date: '%Y' }} {{ site.title }}. All rights reserved.</p>
-  </footer>
+  <div id="top-bar">
+					<ul id="idiomas">
+						<li class="activo"><a href="/index.html">ES</a></li>
+						<li><a href="/en.html">EN</a></li>
+					</ul>
+					<div id="buscar">
+							<a class="boton-buscar"></a>
+							<label for="q" style="display:none">Buscar</label>
+							<input type="text" size="10" placeholder="" name="q" id="q">
+							<input type="button" value="{{ site.data[page.idioma].buscar }}" class="btn-buscar" onclick="buscarYRedirigir('{{page.idioma}}')">
+					</div>
+          <ul class="nav justify-content-center" id="results-container"></ul>
+				</div>
+
+  <div class="external-buttons">
+    <a href="/index.html"><img src="/assets/img/asset0.png" alt="Botón 1"></a>
+    <a href="/acercanuevo.html"><img src="/assets/img/asset1.png" alt="Botón 2"></a>
+
+  </div>
+
+  <nav class="row" id="menu-principal"><div id="menu-button" style="display: block;" bis_skin_checked="1">Menú</div>
+    <ul class="open">
+      <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].conoce_uco }}</a>
+        <ul style="display: block;">
+          <li><a href="{% if page.idioma == 'es' %}{{ 'historia' | append: '_es.html' }}{% else %}{{ 'historia' | append: '_en.html' }}{% endif %}">{{ site.data[page.idioma].historia }}</a></li>
+          <li class="has-sub"><span class="submenu-button"></span><a href="">{{ site.data[page.idioma].organizacion}}</a>
+            <ul style="display: block;">
+              <li><a href="organizacion-institucional-equipo-gobierno.html">{{ site.data[page.idioma].gobierno}}</a></li>
+              <li><a href="organizacion/consejogobierno">{{ site.data[page.idioma].consejo_gobierno }}</a></li>
+              <li><a href="organizacion/secretariageneral/claustro-universidad">{{ site.data[page.idioma].claustro}}</a></li>
+              <li><a href="organizacion/secretariageneral">{{ site.data[page.idioma].secretaria_general}}</a></li>
+              <li><a href="gerencia">{{ site.data[page.idioma].gerencia}}</a></li>
+              <li><a href="servicios/asesoriajuridica">{{ site.data[page.idioma].asesoria_juridica}}</a></li>
+              <li><a href="organizacion/defensor_universitario">{{ site.data[page.idioma].defensoria_universitaria}}</a></li>
+              <li><a href="https://consejosocialuco.es/" target="_blank">{{ site.data[page.idioma].consejo_social}}</a></li>
+            </ul>
+          </li>
+          <li><a href="gestion_administrativa.html">{{ site.data[page.idioma].gestion_administrativa}}</a></li>
+          <li><a href="organizacion/secretariageneral/normativa">{{ site.data[page.idioma].normativa}}</a></li>
+          <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].centros_departamentos}}</a>
+            <ul style="display: block;">
+              <li><a href="organiza/centros/veterinaria/">{{ site.data[page.idioma].vet}}</a></li>
+              <li><a href="organiza/centros/etsiam/">{{ site.data[page.idioma].agronomia_montes}}</a></li>
+              <li><a href="organiza/centros/medicinayenfermeria/">{{ site.data[page.idioma].medicina_enfermeria}}</a></li>
+              <li><a href="organiza/centros/ciencias/">{{ site.data[page.idioma].ciencias}}</a></li>
+              <li><a href="organiza/centros/filosofia/">{{ site.data[page.idioma].filosofia_letras}}</a></li>
+              <li><a href="organiza/centros/derecho/">{{ site.data[page.idioma].derecho_ciencias}}</a></li>
+              <li><a href="organiza/centros/educacion/">{{ site.data[page.idioma].derecho_ciencias}}</a></li>
+              <li><a href="organiza/centros/eps/">{{ site.data[page.idioma].politecnica_cordoba}}</a></li>
+              <li><a href="organiza/centros/rlaborales/">{{ site.data[page.idioma].ciencias_trabajo}}</a></li>
+              <li><a href="organiza/centros/EPSBelmez/">{{ site.data[page.idioma].politecnica_belmez}}</a></li>
+              <li><a href="estudios/idep/">{{ site.data[page.idioma].posgrado}}</a></li>
+              <li><a href="http://www.uco.es/sagradocorazon/" target="_blank">{{ site.data[page.idioma].magisterio}}</a></li>
+              <li><a href="https://www.uco.es/organiza/centros/fisidec/" target="_blank">{{ site.data[page.idioma].fisidec}}</a></li>
+              <li><a href="catedrasyaulas/intergeneracional/" target="_blank">{{ site.data[page.idioma].intergeneracional}}</a></li>
+              <li><a href="departamentos.html" target="_blank"> {{ site.data[page.idioma].departamentos}}</a></li>
+              <li><a href="informacion/campus_rabanales/" target="_blank">{{ site.data[page.idioma].campus_rabanales}}</a></li>
+            </ul>
+          </li>
+          <li><a href="servicios/sepa//es/biodiversidad#tab">{{ site.data[page.idioma].biodiversidad_rabanales}}</a></li>
+          <li><a href="internacional/movilidad/internacional-factsandfigures">Facts and figures</a></li>
+          <li><a href="ucomapa.html">{{ site.data[page.idioma].como_llegar}}</a></li>
+        </ul>
+      </li>
+      <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].info_estudiantes}}</a>
+        <ul style="display: block;">
+          <li><a href="pie/">{{ site.data[page.idioma].portal_estudiantes}}</a></li>
+          <li><a href="docencia/grados/">{{ site.data[page.idioma].grados}}</a></li>
+          <li><a href="estudios/idep/">{{ site.data[page.idioma].master_doctorado}}</a></li>
+          <li><a href="estudios/idep/menu-formacion-permanente">{{ site.data[page.idioma].titulos_propios}}</a></li>
+          <li><a href="https://www.uco.es/organiza/centros/cefem/">{{ site.data[page.idioma].formacion_empleabilidad}}</a></li>
+          <li><a href="https://www.uco.es/transferencia/ucoprem2">{{ site.data[page.idioma].practicas_empleo}}</a></li>
+          <li><a href="servicios/sega/">{{ site.data[page.idioma].servicios_academicos}}</a></li>
+          <li><a href="catedras_y_aulas.html">{{ site.data[page.idioma].catedras_aulas_fundaciones}}</a></li>
+          <li><a href="https://ucodigital.uco.es/">UCOdigital</a></li>
+          <li><a href="https://www.campusandaluzvirtual.es/">{{ site.data[page.idioma].campus_andaluz_virtual}}</a></li>
+          <li><a href="https://www.juntadeandalucia.es/economiainnovacionyciencia/sguit/?q=grados">{{ site.data[page.idioma].preinscripcion}}</a></li>
+          <li><a href="internacional/extranjeros">{{ site.data[page.idioma].alumnos_internacionales}}</a></li>
+          <li><a href="servicios/informatica/tesis">eTesis</a></li>
+        </ul>
+      </li>
+      <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].docencia}}</a>
+        <ul style="display: block;">
+          <li><a href="gestion/coordinacion_docencia">Unidad de Inspección</a></li><a href="gestion/coordinacion_docencia">
+          </a><li><a href="gestion/coordinacion_docencia"></a><a href="organizacion/calidad/innovacioneducativa">Formación e Innovación Docente</a></li><a href="organizacion/calidad/innovacioneducativa">
+          </a><li><a href="organizacion/calidad/innovacioneducativa"></a><a href="http://www.uco.es/poling/">Política lingüística</a></li><a href="http://www.uco.es/poling/">
+          </a><li><a href="http://www.uco.es/poling/"></a><a href="organizacion/calidad">{{ site.data[page.idioma].calidad}}</a></li><a href="organizacion/calidad">
+          </a><li><a href="organizacion/calidad"></a><a href="http://moodle.uco.es/moodlemap/">Moodle</a></li>
+          <li><a href="gestion/sigma" target="_blank">{{ site.data[page.idioma].sigma_campus_docente}}</a></li>
+          <li><a href="eguiado/" target="_blank">{{ site.data[page.idioma].e_guiado}}</a></li>
+          <li><a href="https://www.gestion.uco.es/ucomunidad" target="_blank">{{ site.data[page.idioma].ucomunidad}}</a></li>
+          <li><a href="https://www.uco.es/sra">{{ site.data[page.idioma].reserva_aulas}}</a></li>
+        </ul>
+      </li>
+      <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].investigacion}}</a>
+        <ul style="display: block;">
+          <li><a href="investigacion/portal/">{{ site.data[page.idioma].portal_investigacion}}</a></li>
+          <li><a href="internacional/proyectosinternacionales">{{ site.data[page.idioma].proyectos_internacionales}}</a></li>
+          <li><a href="investigacion/portal/scai">{{ site.data[page.idioma].apoyo_investigacion}}</a></li>
+          <li><a href="investigacion/portal/saex">{{ site.data[page.idioma].animales_experimentacion}}</a></li>
+          <li><a href="investigacion/ucci">{{ site.data[page.idioma].cultura_cientifica}}</a></li>
+          <li><a href="grupos-investigacion.html">{{ site.data[page.idioma].grupos_investigacion}}</a></li>
+          <li><a href="investigacion/portal/HRS4R">HRS4R</a></li>
+        </ul>
+      </li>
+      <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].transferencia}}</a>
+        <ul style="display: block;">
+          <li><a href="https://www.uco.es/transferencia">{{ site.data[page.idioma].portal_transferencia}}</a></li>
+          <li><a href="https://www.uco.es/transferencia/plan-propio">{{ site.data[page.idioma].plan_propio_galileo}}</a></li>
+          <li class="has-sub"><span class="submenu-button"></span><a href="#">Oferta Tecnológica
+            </a><ul style="display: block;"><a href="#">
+              </a><li><a href="#"></a><a href="https://www.uco.es/transferencia/oferta-tecnologica">{{ site.data[page.idioma].buscador_oferta_tecnologia}}</a></li>
+              <li><a href="https://www.uco.es/transferencia/ofertas-tecnologicas">{{ site.data[page.idioma].resumen_oferta_tecnologica}}</a></li>
+            </ul>
+          </li>
+          <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].colaboracion_empresas}}</a>
+            <ul style="display: block;">
+              <li><a href="https://www.uco.es/transferencia/colaboracion-con-empresas/contratos-universidad-empresa">{{ site.data[page.idioma].contratos_universidad_empresa}}</a></li>
+              <li><a href="https://www.uco.es/transferencia/colaboracion-con-empresas/creacion-de-ebcs">{{ site.data[page.idioma].creacion_ecb}}</a></li>
+              <li><a href="https://www.uco.es/transferencia/colaboracion-con-empresas/proyectos-colaborativos">{{ site.data[page.idioma].proyectos_colaborativos}}</a></li>
+            </ul>
+          </li>
+          <li><a href="https://www.uco.es/transferencia/catedras">{{ site.data[page.idioma].catedras_universidad_empresas}}</a></li>
+          <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].quien_quien_transferencia}}		</a>		
+            <ul style="display: block;">
+              <li><a href="transferencia/quien-es-quien-en-las-tareas-de-transferencia-de-la-uco">{{ site.data[page.idioma].entrevistas_grupos_investigacion}}</a></li>	
+              <li><a href="transferencia/videos-investigadores-biotecnologia">{{ site.data[page.idioma].videos_investigadores_biotecnologia}}</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].servicios_vida_universitaria}}</a>
+        <ul style="display: block;">
+          <li><a href="https://www.ucoshop.es/">{{ site.data[page.idioma].tienda_uco_online}}</a></li>
+          <li><a href="servicios/alojamiento/">{{ site.data[page.idioma].alojamiento}}</a></li>
+          <li><a href="gestion/archivoyregistro">{{ site.data[page.idioma].archivo_registro_administracion}}</a></li>
+          <li><a href="vidauniversitaria/cooperacion/">{{ site.data[page.idioma].area_cooperacion_solidaridad}}</a></li>
+          <li><a href="gestion/gestioneconomica">{{ site.data[page.idioma].gestion_economica}}</a></li>
+          <li><a href="servicios/sad/">{{ site.data[page.idioma].area_inclusion}}</a></li>
+          <li><a href="servicios/biblioteca/">{{ site.data[page.idioma].biblioteca}}</a></li>
+          <li><a href="organizacion/calidad/">{{ site.data[page.idioma].calidad}}</a></li>
+          <li><a href="gestion/contratacion">{{ site.data[page.idioma].contratacion_patrimonio}}</a></li>
+          <li><a href="cultura/">{{ site.data[page.idioma].ucocultura}}</a></li>
+          <li><a href="https://www.uco.es/deportes">{{ site.data[page.idioma].deporte}}</a></li>
+          <li><a href="servicios/actualidad/">{{ site.data[page.idioma].gabinete_comunicacion}}</a></li>
+          <li><a href="http://www.uco.es/idiomas/">{{ site.data[page.idioma].ucoidiomas}}</a></li>
+          <li><a href="vidauniversitaria/igualdad/">{{ site.data[page.idioma].igualdad}}</a></li>
+          <li><a href="gestion/contratacion/ofertas">{{ site.data[page.idioma].ofertas_comunidad_universitaria}}</a></li>
+          <li><a href="informacion_webs.html">{{ site.data[page.idioma].otras_webs_blogs}}</a></li>
+          <li><a href="https://www.uco.es/transferencia/ucoprem2">{{ site.data[page.idioma].practicas_empleo_2}}</a></li>
+          <li><a href="https://www.uco.es/servicios/prevencion/es/inicio-promocion-salud">{{ site.data[page.idioma].promocion_salud}}</a></li>
+          <li><a href="organizacion/protocolo/">{{ site.data[page.idioma].protocolo}}</a></li>
+          <li><a href="http://www.uco.es/servicios/ucopress">{{ site.data[page.idioma].publicaciones}}</a></li>
+          <li><a href="gestion/virtual">{{ site.data[page.idioma].secretaria_virtual}}</a></li>
+          <li><a href="gestion/controlinterno">{{ site.data[page.idioma].control_interno}}</a></li>
+          <li><a href="servicios/informatica/">{{ site.data[page.idioma].informatica}}</a></li>
+          <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].prevencion_proteccion}}</a>
+          <ul style="display: block;">
+          <li><a href="servicios/prevencion/">{{ site.data[page.idioma].prevencion_riesgos_proteccion_radiologica}}</a></li>
+          <li><a href="servicios/sepa/">{{ site.data[page.idioma].proteccion_ambiental}}</a></li>
+          </ul>
+          </li>
+          <li><a href="http://ucodigital.uco.es/">{{ site.data[page.idioma].ucodigital}}</a></li>
+          <li><a href="gestion/gestioneconomica/ucompras-uco">{{ site.data[page.idioma].ucompras}}</a></li>
+          <li><a href="http://uco.es/uacds">{{ site.data[page.idioma].apoyo_tecnologico}}</a></li>
+          <li><a href="https://www.uco.es/servicios/prevencion/es/inicio-unap">{{ site.data[page.idioma].atencion_psicologica}}</a></li>
+          <li><a href="servicios/serviciosgenerales/">{{ site.data[page.idioma].servicios_generales}}</a></li>
+          <li><a href="gestion/unidadtecnica">{{ site.data[page.idioma].unidad_tecnica}}</a></li>
+        </ul>
+      </li>
+      <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].internacional}}</a>
+        <ul style="display: block;">
+          <li><a href="internacional/movilidad/">Programas de movilidad</a></li><a href="internacional/movilidad/">
+          </a><li><a href="internacional/movilidad/"></a><a href="internacional/proyectosinternacionales">{{ site.data[page.idioma].proyectos_internacionales}}</a></li><a href="internacional/proyectosinternacionales">
+          </a><li class="has-sub"><span class="submenu-button"></span><a href="internacional/proyectosinternacionales"></a><a href="#">Contacto e información para extranjeros
+          </a><ul style="display: block;"><a href="#">
+            </a><li><a href="#"></a><a href="internacional/extranjeros">{{ site.data[page.idioma].alumnos_internacionales}}</a></li>
+          </ul>
+          </li>
+          <li><a href="http://uco.es/internacional/convenios/es/">{{ site.data[page.idioma].convenios_internacionales}}</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+{% assign letterstring = "carouselExample" %}
+{% assign number = include.number | minus: 1 %}
+
+<div id="{{ letterstring }}" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      {% assign carousel_images = site.static_files | where_exp: "item", "item.path contains '/assets/carousel-images/'" | sort: 'date' | reverse | limit: 9 %}
+
+        {% for item in carousel_images limit:9 %}
+            <li data-bs-target="#{{ letterstring }}" data-bs-slide-to="{{ forloop.index0 }}" class="circular-button {% if forloop.first %}active{% endif %}" aria-label="Slide {{ forloop.index }}"></li>
+        {% endfor %}
+    </div>
+    <div class="carousel-inner">
+        {% for item in carousel_images limit:9%}
+            <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                <img src="{{ item.path }}" class="d-block w-100" alt="...">
+            </div>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+  <div class="mt-3">
+    <div class="mt-3">
+      <div class="mt-3">
+      <div class="row" id="destacados">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 custom-col">
+          <a href="servicios/actualidad">
+            <img class="custom-img" src="/assets/img/asset 14.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
+            <h2 class="titulo">{{ site.data[page.idioma].actualidad_universitaria}}</h2>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 custom-col">
+          <a href="servicios/actualidad">
+            <img class="custom-img" src="/assets/img/asset 15.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
+            <h2 class="titulo" id="agenda">{{ site.data[page.idioma].agenda}}</h2>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 custom-col">
+          <a href="servicios/actualidad">
+            <img class="custom-img" src="/assets/img/asset 16.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
+            <h2 class="titulo">Vídeos</h2>
+          </a>
+        </div>
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 custom-col">
+          <a href="servicios/actualidad">
+            <img class="custom-img" src="/assets/img/asset 17.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
+            <h2 class="titulo" id="ciencia">{{ site.data[page.idioma].ciencia_uco}}</h2>
+          </a>
+        </div>
+    </div>
+
+    <div class="row text-center" id="div-noticias">
+      <h3 class="mt-4">{{ site.data[page.idioma].noticias }}</h3>
+
+      {% assign noticias_ordenadas = site.noticias | sort: 'fecha_creacion' | reverse %}
+
+      {% for noticia in noticias_ordenadas limit:4 %}
+      <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 custom-col">
+        <figure>
+          <a href="{% if page.idioma == 'es' %}{{ noticia.link | append: '_es' }}{% else %}{{ noticia.link | append: '_en' }}{% endif %}" target="_blank">
+            <img src="{{ noticia.image }}" alt="{{ noticia.description }}" class="img-fluid custom-img" style="width: 280px; height: 152px;">
+          </a>
+          <figcaption class="image-caption text-left">
+            <a style="color: #575756;" href="{% if page.idioma == 'es' %}{{ noticia.link | append: '_es' }}{% else %}{{ noticia.link | append: '_en' }}{% endif %}" target="_blank">
+              {% if page.idioma == 'es' %}
+                {{ noticia.title_es }}
+              {% else %}
+                {{ noticia.title_en }}
+              {% endif %}
+            </a>
+          </figcaption>
+        </figure>
+      </div>
+    {% endfor %}
+  </div>
+
+      <div class="row" id="menuContainer"style="margin-bottom: 0px !important;">
+        <h3 class="mt-4">{{ site.data[page.idioma].interes}}</h3>
+        <div class="item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+          <a href="https://sede.uco.es/"><span >{{ site.data[page.idioma].sede_electronica}}</span></a>
+        </div>
+        <div class="item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+          <a href="transparencia-y-responsabilidad-social.html"><span >{{ site.data[page.idioma].transparencia_resp_social}}</span></a>
+        </div>
+        <div class="item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+          <a href="https://sede.uco.es/bouco/"><span >{{ site.data[page.idioma].bouco}}</span></a>
+        </div>
+        <div class="item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+          <a href="facturae"><span >{{ site.data[page.idioma].factura_electronica}}</span></a>
+        </div>
+        <div class="item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+          <a href="gestion/laboral"><span>{{ site.data[page.idioma].portal_personal}}</span></a>
+        </div>
+        <div class="item col-lg-2 col-md-4 col-sm-6 col-xs-12">
+          <a href="http://www.ceia3.es/"><span>ceiA3</span></a>
+        </div>
+    </div>
+
+  <footer class="container-fluid footer-bar text-center custom-footer-background pt-4 pb-4">
+    <div class="row align-items-center">
+        <div class="col-md-12 menu-footer mb-3">
+            <a href="mapaweb.html">{{ site.data[page.idioma].mapa_web}}</a> ·
+            <a href="http://www.uco.es/servicios/actualidad/accesibilidad" target="_blank">{{ site.data[page.idioma].accesibilidad}}</a> ·
+            <a href="contacto.html">{{ site.data[page.idioma].contacto}}</a> ·
+            <a href="gestion/virtual/directorio-uco" target="_blank">{{ site.data[page.idioma].buscar_personas}}</a> ·
+            <a href="https://www.uco.es/correo">{{ site.data[page.idioma].correo}}</a> ·
+            <a href="https://www.uco.es/organizacion/areasecretariageneral/transparencia/integridad-y-buen-gobierno/" target="_blank">{{ site.data[page.idioma].sistema_integridad_uco}}</a> ·
+            <a href="organizacion/secretariageneral/proteccion-de-datos">{{ site.data[page.idioma].proteccion_datos}}</a>
+        </div>
+
+        <div class="col-md-12 logos-footer mb-3">
+            <a href="index.html" class="logo-footer"><img src="/assets/img/asset 22.png" width="50" height="50" alt="Universidad de Córdoba" title="Universidad de Córdoba"></a>
+            <a href="http://www.ceia3.es" target="_blank" class="logo-footer"><img src="/assets/img/asset 23.png" width="50" height="50" alt="Universidad de Córdoba" title="Universidad de Córdoba"></a>
+            <a href="https://www.uco.es/resiliencia" target="_blank" class="logo-footer"><img src="/assets/img/asset 24.jpeg" height="50" alt="Universidad de Córdoba" title="Fondos PRTR"></a>
+            <a href="https://www.bancosantander.es/es/universidades" target="_blank" class="logo-footer"><img src="/assets/img/asset 25.jpeg" height="50" alt="Universidad de Córdoba" title="Santander Universidades"></a>
+            <a href="https://www.uco.es/investigacion/portal/HRS4R" class="logo-footer"><img src="/assets/img/asset 26.png" height="50" alt="HR" title="HR"></a>
+            <a href="http://www.uco.es/zonacardioasegurada/" target="_blank" class="logo-footer logo-zonacardio"><img src="/assets/img/asset 27.png" width="100px" alt="Zona Cardio asegurada" title="Zona Cardio Asegurada - Universidad de Córdoba"></a>
+        </div>
+
+        <div class="col-md-12 redes-sociales">
+          <ul class="list-inline mb-3">
+            <li class="list-inline-item"><a href="https://www.facebook.com/universidadcordoba" target="_blank" rel="nofollow" class="icon-facebook"></a></li>
+            <li class="list-inline-item"><a href="https://twitter.com/Univcordoba" target="_blank" rel="nofollow" class="icon-twitter"></a></li>
+            <li class="list-inline-item"><a href="https://www.linkedin.com/company/universidad-de-cordoba" target="_blank" rel="nofollow" class="icon-linkedin"></a></li>
+            <li class="list-inline-item"><a href="http://www.uco.es/servicios/actualidad/?format=feed" target="_blank" rel="nofollow" class="icon-rss"></a></li>
+            <li class="list-inline-item"><a href="https://www.flickr.com/photos/univcordoba/" target="_blank" rel="nofollow" class="icon-flickr"></a></li>
+            <li class="list-inline-item"><a href="https://www.youtube.com/user/univcordoba" target="_blank" rel="nofollow" class="icon-youtube"></a></li>
+            <li class="list-inline-item"><a href="https://www.instagram.com/universidaddecordoba/" target="_blank" rel="nofollow" class="icon-instagram"></a></li>
+            <li class="list-inline-item"><a href="https://www.tiktok.com/@universidadcordoba?lang=es" target="_blank" rel="nofollow" class="icon-tiktok"></a></li>
+        </ul>
+        </div>
+    </div>
+</footer>
+
+<script src="/assets/js/search.js" type="text/javascript"></script>
+<script>
+  var idioma = "{{page.idioma}}";
+</script>
+<script src="/assets/js/configuracionBusqueda.js" type="text/javascript"></script>
 </body>
 </html>
+
+
+
+
+
+
