@@ -10,7 +10,7 @@ ult_fecha_modificada: Friday, November 24, 2023 09:46
 Lugar_publicacion: Reports
 hastag: "#UCO #laucoenabierto #video #Gervasio_Sanchez #photography #students"
 url_image: /assets/img/noticia5.jpg
-contador_visitas: '<script type="text/javascript" src="http://www.websitegoodies.com/counter.php?id=75442&color=%231253bd"></script>'
+contador_visitas: '<script type="text/javascript" src="https://www.websitegoodies.com/counter.php?id=75442&color=%231253bd"></script>'
 ---
 
 

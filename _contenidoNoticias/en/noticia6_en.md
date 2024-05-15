@@ -10,7 +10,7 @@ ult_fecha_modificada: Friday, November 24, 2023 09:46
 Lugar_publicacion: University_News
 hastag: "#students #student_representation #CEUCO"
 url_image: /assets/img/noticia6.jpg
-contador_visitas: '<script type="text/javascript" src="http://www.websitegoodies.com/counter.php?id=75443&color=%231253bd"></script>'
+contador_visitas: '<script type="text/javascript" src="https://www.websitegoodies.com/counter.php?id=75443&color=%231253bd"></script>'
 ---
 
 ### The 5th year student of the joint itinerary of Translation and Interpreting and Hispanic Philology, Sara Muñoz Porras, has been proclaimed the new president of the Student Council of the University of Córdoba (CEUCO) by absolute majority after the elections held last Tuesday, October 25 .

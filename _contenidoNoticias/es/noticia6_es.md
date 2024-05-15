@@ -10,10 +10,7 @@ ult_fecha_modificada: Viernes, 24 Noviembre 2023 09:46
 Lugar_publicacion: Actualidad_Universitaria
 hastag: "#estudiantes #representación_estudiantil #CEUCO"
 url_image: /assets/img/noticia6.jpg
-contador_visitas: '<!-- hitwebcounter Code START -->
-<a href="https://www.hitwebcounter.com" target="_blank">
-<img src="https://hitwebcounter.com/counter/counter.php?page=13369228&style=0008&nbdigits=1&type=page&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>                                    
-                                        '
+contador_visitas: '<script type="text/javascript" src="https://www.websitegoodies.com/counter.php?id=75443&color=%231253bd"></script>'
 ---
 
 ### La estudiante de 5º curso del itinerario conjunto de Traducción e Interpretación y Filología Hispánica, Sara Muñoz Porras, se ha proclamado nueva presidenta del Consejo de Estudiantes de la Universidad de Córdoba (CEUCO) por mayoría absoluta tras las elecciones celebradas el pasado martes 25 de octubre.

@@ -10,7 +10,7 @@ ult_fecha_modificada: Friday, November 24, 2023 09:46
 Lugar_publicacion: University_News
 hastag: "#ránkings #ranking_THE #Aupa"
 url_image: /assets/img/noticia4.jpg
-contador_visitas: '<script type="text/javascript" src="http://www.websitegoodies.com/counter.php?id=75447&color=%231253bd"></script>'
+contador_visitas: '<script type="text/javascript" src="https://www.websitegoodies.com/counter.php?id=75447&color=%231253bd"></script>'
 ---
 
 ### In the latest edition of the ranking, the UCO improves its classification, going from 772nd to 744th. At the national level it is ranked 16th and continues to be second in Andalusia.

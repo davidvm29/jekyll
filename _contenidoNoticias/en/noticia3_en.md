@@ -10,7 +10,7 @@ ult_fecha_modificada: "Tuesday, 03 October 2023 13:14"
 Lugar_publicacion: "University_News"
 hastag: "#Aupa Public_Universities_of_Andalusia #Degrees #academic_organization #private_universities"
 url_image: /assets/img/noticia3.jpg
-contador_visitas: '<script type="text/javascript" src="http://www.websitegoodies.com/counter.php?id=75448&color=%231253bd"></script>'
+contador_visitas: '<script type="text/javascript" src="https://www.websitegoodies.com/counter.php?id=75448&color=%231253bd"></script>'
 ---
 
 ### AUPA aims to “make a logical, coherent and responsible offer” of degrees and calls for “quality, strategy and equal conditions” with respect to private universities.
