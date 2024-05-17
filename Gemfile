@@ -11,10 +11,10 @@ source "https://rubygems.org"
 source "https://rubygems.org"
 
 gem "jekyll", "~> 3.8.6"
-gem "minima", "~> 2.5" # Esta es una versión compatible comúnmente usada con Jekyll 3.8
-gem 'sass', '~> 3.7.4' # Esta versión de sass aún es compatible, pero asegúrate de que sea necesaria.
-gem 'jekyll-sass-converter', '~> 1.5' # Ajustando a una versión compatible con Jekyll 3.8.6
-gem 'kramdown', '~> 1.17' # Ajustando a una versión que es conocida por ser compatible con Jekyll 3.8
+gem "minima", "~> 2.5"
+gem 'sass', '~> 3.7.4'
+gem 'jekyll-sass-converter', '~> 1.5'
+gem 'kramdown', '~> 1.17'
 gem 'rexml'
 
 
