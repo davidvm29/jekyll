@@ -4,9 +4,9 @@ var searchConfig = {
   };
 
   if (idioma === "es") {
-    searchConfig.json = '/search_es.json';
+    searchConfig.json = '/assets/json/search_es.json';
   } else {
-    searchConfig.json = '/search_en.json';
+    searchConfig.json = '/assets/json/search_en.json';
   }
 
 new SimpleJekyllSearch(searchConfig);
