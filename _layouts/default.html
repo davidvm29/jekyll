@@ -39,7 +39,7 @@
     <ul class="open">
       <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].conoce_uco }}</a>
         <ul style="display: block;">
-          <li><a href="{% if page.idioma == 'es' %}{{ 'historia' | append: '_es.html' }}{% else %}{{ 'historia' | append: '_en.html' }}{% endif %}">{{ site.data[page.idioma].historia }}</a></li>
+          <li><a href="{% if page.idioma == 'es' %}{{ site.baseurl }}{{ 'historia' | append: '_es.html' }}{% else %}{{ 'historia' | append: '_en.html' }}{% endif %}">{{ site.data[page.idioma].historia }}</a></li>
           <li class="has-sub"><span class="submenu-button"></span><a href="">{{ site.data[page.idioma].organizacion}}</a>
             <ul style="display: block;">
               <li><a href="organizacion-institucional-equipo-gobierno.html">{{ site.data[page.idioma].gobierno}}</a></li>
