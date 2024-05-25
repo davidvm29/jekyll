@@ -16,8 +16,8 @@
 <body>
   <div id="top-bar">
 					<ul id="idiomas">
-						<li class="activo"><a href="/search.html">ES</a></li>
-						<li><a href="/search_en.html">EN</a></li>
+						<li class="activo"><a href="{{ site.baseurl }}/search.html">ES</a></li>
+						<li><a href="{{ site.baseurl }}/search_en.html">EN</a></li>
 					</ul>
 					<div id="buscar">
 							<a class="boton-buscar"></a>
@@ -29,8 +29,8 @@
 
   <!-- Botones de enlace a páginas externas -->
   <div class="external-buttons">
-    <a href="/index.html"><img src="/assets/img/asset0.png" alt="Botón 1"></a>
-    <a href="/acercanuevo.html"><img src="/assets/img/asset1.png" alt="Botón 2"></a>
+    <a href="{{ site.baseurl }}/index.html"><img src="/assets/img/asset0.png" alt="Botón 1"></a>
+    <a href="{{ site.baseurl }}/acercanuevo.html"><img src="/assets/img/asset1.png" alt="Botón 2"></a>
 
   </div>
 
@@ -38,7 +38,7 @@
     <ul class="open">
       <li class="has-sub"><span class="submenu-button"></span><a href="#">{{ site.data[page.idioma].conoce_uco }}</a>
         <ul style="display: block;">
-          <li><a href="{% if page.idioma == 'es' %}{{ 'historia' | append: '_es.html' }}{% else %}{{ 'historia' | append: '_en.html' }}{% endif %}">{{ site.data[page.idioma].historia }}</a></li>
+          <li><a href="{% if page.idioma == 'es' %}{{ site.baseurl }}/{{ 'historia' | append: '_es.html' }}{% else %}{{ site.baseurl }}/{{ 'historia' | append: '_en.html' }}{% endif %}">{{ site.data[page.idioma].historia }}</a></li>
           <li class="has-sub"><span class="submenu-button"></span><a href="">{{ site.data[page.idioma].organizacion}}</a>
             <ul style="display: block;">
               <li><a href="organizacion-institucional-equipo-gobierno.html">{{ site.data[page.idioma].gobierno}}</a></li>
@@ -286,6 +286,7 @@
 <script src="/assets/js/search.js" type="text/javascript"></script>
 <script>
   var idioma = "{{page.idioma}}";
+  var baseUrl= "{{ site.baseurl }}"
 </script>
 <script src="/assets/js/configuracionBusqueda.js" type="text/javascript"></script>
 <script src="/assets/js/enlacesBusqueda.js" type="text/javascript"></script>

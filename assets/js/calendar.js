@@ -146,9 +146,9 @@ document.addEventListener('DOMContentLoaded', function () {
   
       if (enlacesAsociados) {
         if (idioma === "es") {
-        newsLinks[i].innerHTML = '<a href="/noticiasfiltradas.html">' + titulo + '</a>';
-        }else{
-          newsLinks[i].innerHTML = '<a href="/noticiasfiltradas_en.html">' + titulo + '</a>';
+          newsLinks[i].innerHTML = '<a href="' + baseurl + '/noticiasfiltradas.html">' + titulo + '</a>';
+        } else {
+          newsLinks[i].innerHTML = '<a href="' + baseurl + '/noticiasfiltradas_en.html">' + titulo + '</a>';
         }
         // Agregar evento de clic para almacenar la fecha, el título y los enlaces asociados y mostrar ventana emergente
         newsLinks[i].addEventListener('click', function () {

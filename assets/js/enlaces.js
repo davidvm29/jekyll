@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const fechaFormateada = fechasPublicacion[index].replace(/_/g, ' '); // Se realiza el reemplazo para las fechas de publicación
             htmlContent += '<div class="itemContainer">'; // Añadido un contenedor para el artículo
             htmlContent += '<span>' + fechaFormateada + '</span>'; // Se utiliza la fecha formateada
-            htmlContent += '<h2 class="titulofiltradas"><a href="' + enlace.enlace + '">' + tituloFormateado + '</a></h2>';
+            htmlContent += '<h2 class="titulofiltradas"><a href="' + baseUrl + enlace.enlace + '">' + tituloFormateado + '</a></h2>';
             htmlContent += '<div class="genericItemCategory">';
             if (idioma === "es") {
                 htmlContent += '<span>Publicado en</span>';
@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             htmlContent += '<a id="lugar" href="#">  ' + lugarFormateado + ' ' + '</a>';
             if (idioma === "es") {
-                htmlContent += '<a href="' + enlace.enlace + '">&nbsp;Leer más...</a>';
+                htmlContent += '<a href="' + baseUrl + enlace.enlace + '">&nbsp;Leer más...</a>';
             } else {
-                htmlContent += '<a href="' + enlace.enlace + '">&nbsp;Read more...</a>';
+                htmlContent += '<a href="' + baseUrl + enlace.enlace + '">&nbsp;Read more...</a>';
             }
             htmlContent += '</div>';
             htmlContent += '</div>';

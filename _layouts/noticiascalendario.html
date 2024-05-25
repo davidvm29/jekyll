@@ -18,8 +18,8 @@
 <body>
     <div id="top-bar">
         <ul id="idiomas">
-            <li class="activo"><a href="/noticiasfiltradas.html">ES</a></li>
-            <li><a href="/noticiasfiltradas_en.html">EN</a></li>
+            <li class="activo"><a href="{{ site.baseurl }}/noticiasfiltradas.html">ES</a></li>
+            <li><a href="{{ site.baseurl }}/noticiasfiltradas_en.html">EN</a></li>
         </ul>
         <div id="buscar">
                 <a class="boton-buscar"></a>
@@ -32,14 +32,14 @@
 
 <!-- Botones de enlace a páginas externas -->
 <div class="external-buttons">
-<a href="/index.html"><img src="/assets/img/asset0.png" alt="Botón 1"></a>
-<a href="/acercanuevo.html"><img src="/assets/img/asset1.png" alt="Botón 2"></a>
+<a href="{{ site.baseurl }}/index.html"><img src="/assets/img/asset0.png" alt="Botón 1"></a>
+<a href="{{ site.baseurl }}/acercanuevo.html"><img src="/assets/img/asset1.png" alt="Botón 2"></a>
 
 </div>
 
 <nav class="row" id="menu-principal"><div id="menu-button" style="display:block;" bis_skin_checked="1">Menú</div>
   <ul class="open">
-      <li><a href="/index.html">{{ site.data[page.idioma].inicio}}</a></li>
+      <li><a href="{{ site.baseurl }}/index.html">{{ site.data[page.idioma].inicio}}</a></li>
       <li><a href="#">{{ site.data[page.idioma].vida_academica}}</a></li>
       <li><a href="#">{{ site.data[page.idioma].ciencia}}</a></li>
       <li><a href="#">{{ site.data[page.idioma].institucional}}</a></li>
@@ -201,6 +201,7 @@
 <script>
   var fechanoticia = "{{ fechanoticia }}";
   var idioma = "{{page.idioma}}";
+  var baseUrl= "{{ site.baseurl }}"
 </script>
 
 <script src="/assets/js/calendar.js"></script>
