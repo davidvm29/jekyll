@@ -260,11 +260,11 @@
       {% for noticia in noticias_ordenadas limit:4 %}
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 custom-col">
         <figure>
-          <a href="{% if page.idioma == 'es' %}{{ site.baseurl }}/{{ noticia.link | append: '_es' }}{% else %}{{ site.baseurl }}/{{ noticia.link | append: '_en' }}{% endif %}">
+          <a href="{% if page.idioma == 'es' %}{{ site.baseurl }}{{ noticia.link | append: '_es' }}{% else %}{{ site.baseurl }}{{ noticia.link | append: '_en' }}{% endif %}">
             <img src="{{ noticia.image }}" alt="{{ noticia.description }}" class="img-fluid custom-img" style="width: 280px; height: 152px;">
           </a>
           <figcaption class="image-caption text-left">
-            <a style="color: #575756;" href="{% if page.idioma == 'es' %}{{ site.baseurl }}/{{ noticia.link | append: '_es' }}{% else %}{{ site.baseurl }}/{{ noticia.link | append: '_en' }}{% endif %}">
+            <a style="color: #575756;" href="{% if page.idioma == 'es' %}{{ site.baseurl }}{{ noticia.link | append: '_es' }}{% else %}{{ site.baseurl }}{{ noticia.link | append: '_en' }}{% endif %}">
               {% if page.idioma == 'es' %}
                 {{ noticia.title_es }}
               {% else %}
