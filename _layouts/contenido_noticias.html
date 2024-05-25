@@ -23,8 +23,8 @@
 
   <div id="top-bar">
 					<ul id="idiomas">
-						<li class="activo"><a href="{{ permalink}}_es.html">ES</a></li>
-						<li><a href="{{ permalink }}_en.html">EN</a></li>
+						<li class="activo"><a href="{{ site.baseurl }}{{ permalink}}_es.html">ES</a></li>
+						<li><a href="{{ site.baseurl }}{{ permalink }}_en.html">EN</a></li>
 					</ul>
 					<div id="buscar">
 							<a class="boton-buscar"></a>
@@ -39,14 +39,14 @@
 
   <!-- Botones de enlace a páginas externas -->
   <div class="external-buttons">
-    <a href="/index.html"><img src="/assets/img/asset0.png" alt="Botón 1"></a>
-    <a href="/acercanuevo.html"><img src="/assets/img/asset1.png" alt="Botón 2"></a>
+    <a href="{{ site.baseurl }}/index.html"><img src="/assets/img/asset0.png" alt="Botón 1"></a>
+    <a href="{{ site.baseurl }}/acercanuevo.html"><img src="/assets/img/asset1.png" alt="Botón 2"></a>
 
   </div>
 
   <nav class="row" id="menu-principal"><div id="menu-button" style="display:block;" bis_skin_checked="1">Menú</div>
     <ul class="open">
-        <li><a href="/index.html">{{ site.data[page.idioma].inicio}}</a></li>
+        <li><a href="{{ site.baseurl }}/index.html">{{ site.data[page.idioma].inicio}}</a></li>
         <li><a href="#">{{ site.data[page.idioma].vida_academica}}</a></li>
         <li><a href="#">{{ site.data[page.idioma].ciencia}}</a></li>
         <li><a href="#">{{ site.data[page.idioma].institucional}}</a></li>
@@ -132,7 +132,7 @@
             
             {% if common_tags.size > 0 and remaining_tags.size > 0 and post.url != page.url %}
               <li>
-                <a href="{{ post.url }}">{{ post.title | replace: '_', ' ' }}</a>
+                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | replace: '_', ' ' }}</a>
               </li>
             {% endif %}
           {% endif %}
@@ -163,7 +163,7 @@
     
     {% if common_tags.size > 0 and remaining_tags.size > 0 and post.url != page.url and link_count < 4 %}
       {% assign link_count = link_count | plus: 1 %}
-      <a href="{{ post.url }}">{{ post.title | replace: '_', ' ' }}</a>
+      <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | replace: '_', ' ' }}</a>
     {% endif %}
   {% endif %}
 {% endfor %}
