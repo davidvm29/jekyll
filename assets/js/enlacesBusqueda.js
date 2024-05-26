@@ -11,7 +11,7 @@ if (cachedResults) {
         listItem.textContent = result.title;
         // Enlazar el resultado a su URL correspondiente
         var link = document.createElement('a');
-        link.href =  result.url;
+        link.href = result.url;
         link.appendChild(listItem);
         resultsContainer.appendChild(link);
     });
