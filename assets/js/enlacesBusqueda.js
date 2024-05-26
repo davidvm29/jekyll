@@ -16,7 +16,3 @@ if (cachedResults) {
         resultsContainer.appendChild(link);
     });
 }
-else {
-    // Ocultar el contenedor de resultados si no hay resultados en la caché
-    resultsContainer.style.display = 'none';
-}
