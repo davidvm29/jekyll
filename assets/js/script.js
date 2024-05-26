@@ -158,7 +158,6 @@ function cargarMenu() {
   }
 }
 /* SEARCH */
-console.log('joder',baseUrl)
 function buscarYRedirigir(idioma) {
   var searchTerm = document.getElementById('q').value;
   // Realizar la búsqueda con el término searchTerm
