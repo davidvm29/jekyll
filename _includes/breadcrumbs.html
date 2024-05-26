@@ -3,7 +3,7 @@
 </head>
 <div id="breadcrumbs">
     {% assign crumbs = page.url | remove:'/index.html' | split: '/' %}
-    <a href="/">Inicio</a>
+    <a href="{{site.baseUrl}}/">Inicio</a>
     {% for crumb in crumbs offset: 1 %}
       {% if forloop.last %}
       › {{ page.title | replace: '_', ' ' }}
