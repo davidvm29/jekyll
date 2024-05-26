@@ -158,6 +158,7 @@ function cargarMenu() {
   }
 }
 /* SEARCH */
+
 function buscarYRedirigir(idioma) {
   var searchTerm = document.getElementById('q').value;
   // Realizar la búsqueda con el término searchTerm

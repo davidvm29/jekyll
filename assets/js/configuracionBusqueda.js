@@ -1,5 +1,6 @@
 // Definir la configuración para SimpleJekyllSearch
 var searchConfig = {
+  searchInput: document.getElementById('q'), // Esto es necesario aunque no se use directamente
   resultsContainer: document.getElementById('results-container'),
   json: idioma === "es" ? '/assets/json/search_es.json' : '/assets/json/search_en.json'
 };
@@ -15,3 +16,6 @@ function obtenerResultadosDeBusqueda(searchTerm) {
   });
   return results;
 }
+
+// Exportar la configuración y funciones si es necesario (para módulos)
+export { searchConfig, obtenerResultadosDeBusqueda };
