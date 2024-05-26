@@ -16,6 +16,3 @@ function obtenerResultadosDeBusqueda(searchTerm) {
   });
   return results;
 }
-
-// Exportar la configuración y funciones si es necesario (para módulos)
-export { searchConfig, obtenerResultadosDeBusqueda };
