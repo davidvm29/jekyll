@@ -202,6 +202,9 @@
   var fechanoticia = "{{ fechanoticia }}";
   var idioma = "{{page.idioma}}";
   var baseUrl= "{{ site.baseurl }}"
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("results-container").style.display = "none";
+});
 </script>
 
 <script src="{{ site.baseurl }}/assets/js/calendar.js"></script>

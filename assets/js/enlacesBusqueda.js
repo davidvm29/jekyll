@@ -1,6 +1,6 @@
 // Recuperar los resultados de la búsqueda almacenados en la caché del navegador
 var cachedResults = localStorage.getItem('searchResults');
-var resultsContainer = document.getElementById('results-container');
+var resultsContainer = document.getElementById('results-containerr');
 if (cachedResults) {
     // Convertir los resultados de cadena JSON a objeto JavaScript
     var results = JSON.parse(cachedResults);

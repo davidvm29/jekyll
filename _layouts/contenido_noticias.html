@@ -325,6 +325,9 @@
   var fechanoticia = "{{ fechanoticia }}";
   var baseUrl= "{{ site.baseurl }}"
   var idioma = "{{page.idioma}}";
+  document.addEventListener("DOMContentLoaded", function() {
+    document.getElementById("results-container").style.display = "none";
+});
 </script>
 <script src="{{ site.baseurl }}/assets/js/calendar.js"></script>
 <script src="{{ site.baseurl }}/assets/js/script.js"></script>
