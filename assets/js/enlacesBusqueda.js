@@ -1,6 +1,6 @@
 // Recuperar los resultados de la búsqueda almacenados en la caché del navegador
 var cachedResults = localStorage.getItem('searchResults');
-var resultsContainer = document.getElementById('results-containerr');
+var resultsContainer = document.getElementById('results-container');
 if (cachedResults) {
     // Convertir los resultados de cadena JSON a objeto JavaScript
     var results = JSON.parse(cachedResults);
@@ -11,7 +11,7 @@ if (cachedResults) {
         listItem.textContent = result.title;
         // Enlazar el resultado a su URL correspondiente
         var link = document.createElement('a');
-        link.href = baseUrl + result.url;
+        link.href =  result.url;
         link.appendChild(listItem);
         resultsContainer.appendChild(link);
     });

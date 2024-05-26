@@ -4,15 +4,15 @@
   },
   {
    "title": "Menú",
-   "url": "/index.html#menu-principal"
+   "url": "/jekyll/index.html#menu-principal"
   },
   {
    "title": "Conoce la UCO",
-   "url":"/index.html#menu-principal"
+   "url":"/jekyll/index.html#menu-principal"
   },
   {
    "title": "Historia",
-   "url":"/historia_es.html"
+   "url":"/jekyll/historia_es.html"
   },
   {
    "title": "Organización institucional"
@@ -391,16 +391,16 @@
   },
   {
     "title": "Los rectores andaluces abordan el nuevo mapa de titulaciones y piden igualdad respecto a las universidades privadas",
-    "url": "/contenido3_es.html"
+    "url": "/jekyll/contenido3_es.html"
    },
    {
     "title": "La Universidad de Córdoba, entre las 800 mejores universidades del mundo según el último ranking THE",
-    "url": "/contenido4_es.html"
+    "url": "/jekyll/contenido4_es.html"
    }
    ,
    {
     "title": "#LaUCOenAbierto I Luz de las vidas minadas",
-    "url": "/contenido5_es.html"
+    "url": "/jekyll/contenido5_es.html"
    }
    ,
    {
