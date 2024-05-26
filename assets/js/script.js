@@ -165,6 +165,7 @@ function buscarYRedirigir(idioma) {
   // Después de obtener los resultados, los almacenamos en la caché del navegador
   var results = obtenerResultadosDeBusqueda(searchTerm);
   localStorage.setItem('searchResults', JSON.stringify(results));
+  cconsole.log('holaaaaaaaaaaaaa',baseUrl)
   // Redireccionar a la página de búsqueda
   if(idioma==="es"){
     window.location.href = baseUrl + "/search.html";
