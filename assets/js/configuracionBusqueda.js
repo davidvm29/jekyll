@@ -1,18 +1,12 @@
-// Definir la configuración para SimpleJekyllSearch
 var searchConfig = {
-  searchInput: document.getElementById('q'), // Esto es necesario aunque no se use directamente
-  resultsContainer: document.getElementById('results-container'),
-  json: idioma === "es" ? '/assets/json/search_es.json' : '/assets/json/search_en.json'
-};
+    searchInput: document.getElementById('q'),
+    resultsContainer: document.getElementById('results-container')
+  };
 
-// Inicializar SimpleJekyllSearch con la configuración definida
-var sjs = new SimpleJekyllSearch(searchConfig);
+  if (idioma === "es") {
+    searchConfig.json = baseUrl + '/assets/json/search_es.json';
+  } else {
+    searchConfig.json = baseUrl + '/assets/json/search_en.json';
+  }
 
-// Función para obtener resultados de búsquedassk
-function obtenerResultadosDeBusqueda(searchTerm) {
-  var results = [];
-  sjs.search(searchTerm, function(result) {
-      results.push(result);
-  });
-  return results;
-}
+new SimpleJekyllSearch(searchConfig);
