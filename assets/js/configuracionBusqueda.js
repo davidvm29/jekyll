@@ -8,7 +8,7 @@ var searchConfig = {
 // Inicializar SimpleJekyllSearch con la configuración definida
 var sjs = new SimpleJekyllSearch(searchConfig);
 
-// Función para obtener resultados de búsqueda
+// Función para obtener resultados de búsquedass
 function obtenerResultadosDeBusqueda(searchTerm) {
   var results = [];
   sjs.search(searchTerm, function(result) {
