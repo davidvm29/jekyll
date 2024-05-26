@@ -171,6 +171,7 @@ function buscarYRedirigir(idioma) {
   }else{
     window.location.href = baseUrl +"/search_en.html";
   }
+  console.log(baseUrl)
 }
 
 function obtenerResultadosDeBusqueda(searchTerm) {
