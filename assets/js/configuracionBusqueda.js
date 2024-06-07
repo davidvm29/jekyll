@@ -3,7 +3,7 @@ var searchConfig = {
     resultsContainer: document.getElementById('results-container')
   };
 
-  if (idioma === "es") {
+  if (idioma == "es") {
     searchConfig.json = baseUrl+ '/assets/json/search_es.json';
   } else {
     searchConfig.json = baseUrl+'/assets/json/search_en.json';

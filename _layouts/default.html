@@ -29,7 +29,12 @@
 				</div>
 
   <div class="external-buttons">
-    <a href="{{ site.baseurl }}/index.html"><img src="{{ site.baseurl }}/assets/img/asset0.png" alt="Botón 1"></a>
+    {% if page.idioma == "es" %}
+        <a href="{{ site.baseurl }}/index.html"><img src="{{ site.baseurl }}/assets/img/asset0.png" alt="Botón 1"></a>
+    {% else %}
+        <a href="{{ site.baseurl }}/en.html"><img src="{{ site.baseurl }}/assets/img/asset0.png" alt="Botón 1"></a>
+    {% endif %}
+
     <a href="{{ site.baseurl }}/acercanuevo.html"><img src="{{ site.baseurl }}/assets/img/asset1.png" alt="Botón 2"></a>
 
   </div>
@@ -213,7 +218,7 @@
     <div class="carousel-inner">
         {% for item in carousel_images limit:9%}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                <img src="{{ item.path }}" class="d-block w-100" alt="...">
+                <img src="{{ site.baseurl }}{{ item.path }}" class="d-block w-100" alt="...">
             </div>
         {% endfor %}
     </div>
@@ -227,25 +232,25 @@
       <div class="row" id="destacados">
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 custom-col">
           <a href="servicios/actualidad">
-            <img class="custom-img" src="/assets/img/asset 14.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
+            <img class="custom-img" src="{{ site.baseurl }}/assets/img/asset 14.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
             <h2 class="titulo">{{ site.data[page.idioma].actualidad_universitaria}}</h2>
           </a>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 custom-col">
           <a href="servicios/actualidad">
-            <img class="custom-img" src="/assets/img/asset 15.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
+            <img class="custom-img" src="{{ site.baseurl }}/assets/img/asset 15.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
             <h2 class="titulo" id="agenda">{{ site.data[page.idioma].agenda}}</h2>
           </a>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 custom-col">
           <a href="servicios/actualidad">
-            <img class="custom-img" src="/assets/img/asset 16.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
+            <img class="custom-img" src="{{ site.baseurl }}/assets/img/asset 16.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
             <h2 class="titulo">Vídeos</h2>
           </a>
         </div>
         <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 custom-col">
           <a href="servicios/actualidad">
-            <img class="custom-img" src="/assets/img/asset 17.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
+            <img class="custom-img" src="{{ site.baseurl }}/assets/img/asset 17.jpeg" alt="Actualidad Universitaria" longdesc="servicios/actualidad">
             <h2 class="titulo" id="ciencia">{{ site.data[page.idioma].ciencia_uco}}</h2>
           </a>
         </div>
@@ -260,7 +265,7 @@
       <div class="col-lg-3 col-md-3 col-sm-3 col-xs-6 custom-col">
         <figure>
           <a href="{% if page.idioma == 'es' %}{{ site.baseurl }}{{ noticia.link | append: '_es' }}{% else %}{{ site.baseurl }}{{ noticia.link | append: '_en' }}{% endif %}">
-            <img src="{{ noticia.image }}" alt="{{ noticia.description }}" class="img-fluid custom-img" style="width: 280px; height: 152px;">
+            <img src="{{ site.baseurl }}{{ noticia.image }}" alt="{{ noticia.description }}" class="img-fluid custom-img" style="width: 280px; height: 152px;">
           </a>
           <figcaption class="image-caption text-left">
             <a style="color: #575756;" href="{% if page.idioma == 'es' %}{{ site.baseurl }}{{ noticia.link | append: '_es' }}{% else %}{{ site.baseurl }}{{ noticia.link | append: '_en' }}{% endif %}">
@@ -311,12 +316,12 @@
         </div>
 
         <div class="col-md-12 logos-footer mb-3">
-            <a href="index.html" class="logo-footer"><img src="/assets/img/asset 22.png" width="50" height="50" alt="Universidad de Córdoba" title="Universidad de Córdoba"></a>
-            <a href="http://www.ceia3.es" target="_blank" class="logo-footer"><img src="/assets/img/asset 23.png" width="50" height="50" alt="Universidad de Córdoba" title="Universidad de Córdoba"></a>
-            <a href="https://www.uco.es/resiliencia" target="_blank" class="logo-footer"><img src="/assets/img/asset 24.jpeg" height="50" alt="Universidad de Córdoba" title="Fondos PRTR"></a>
-            <a href="https://www.bancosantander.es/es/universidades" target="_blank" class="logo-footer"><img src="/assets/img/asset 25.jpeg" height="50" alt="Universidad de Córdoba" title="Santander Universidades"></a>
-            <a href="https://www.uco.es/investigacion/portal/HRS4R" class="logo-footer"><img src="/assets/img/asset 26.png" height="50" alt="HR" title="HR"></a>
-            <a href="http://www.uco.es/zonacardioasegurada/" target="_blank" class="logo-footer logo-zonacardio"><img src="/assets/img/asset 27.png" width="100px" alt="Zona Cardio asegurada" title="Zona Cardio Asegurada - Universidad de Córdoba"></a>
+            <a href="index.html" class="logo-footer"><img src="{{ site.baseurl }}/assets/img/asset 22.png" width="50" height="50" alt="Universidad de Córdoba" title="Universidad de Córdoba"></a>
+            <a href="http://www.ceia3.es" target="_blank" class="logo-footer"><img src="{{ site.baseurl }}/assets/img/asset 23.png" width="50" height="50" alt="Universidad de Córdoba" title="Universidad de Córdoba"></a>
+            <a href="https://www.uco.es/resiliencia" target="_blank" class="logo-footer"><img src="{{ site.baseurl }}/assets/img/asset 24.jpeg" height="50" alt="Universidad de Córdoba" title="Fondos PRTR"></a>
+            <a href="https://www.bancosantander.es/es/universidades" target="_blank" class="logo-footer"><img src="{{ site.baseurl }}/assets/img/asset 25.jpeg" height="50" alt="Universidad de Córdoba" title="Santander Universidades"></a>
+            <a href="https://www.uco.es/investigacion/portal/HRS4R" class="logo-footer"><img src="{{ site.baseurl }}/assets/img/asset 26.png" height="50" alt="HR" title="HR"></a>
+            <a href="http://www.uco.es/zonacardioasegurada/" target="_blank" class="logo-footer logo-zonacardio"><img src="{{ site.baseurl }}/assets/img/asset 27.png" width="100px" alt="Zona Cardio asegurada" title="Zona Cardio Asegurada - Universidad de Córdoba"></a>
         </div>
 
         <div class="col-md-12 redes-sociales">

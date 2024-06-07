@@ -1,7 +1,6 @@
 html {
-  -webkit-text-size-adjust: 100%; /* Para versiones antiguas de iOS Safari/Chrome/Firefox */
-  text-size-adjust: 100%; /* Estándar para otros navegadores */
-}
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 
 body {
   margin: 40px;
@@ -211,7 +210,7 @@ p {
   height: 32px; 
   width: 32px; 
   margin-right:5px;
-  background:url(../img/boton-lupa.png) top center no-repeat;
+  background:url('{{ site.baseurl }}/img/boton-lupa.png') top center no-repeat;
  }
 #top-bar #buscar input[type=text]{ 
   height: 20px; 
@@ -536,32 +535,32 @@ p {
   cursor: pointer;
 }
 .icon-facebook{
-  background-image: url('/assets/img/asset32.png');
+  background-image: url('{{ site.baseurl }}/assets/img/asset32.png');
 }
 
 .icon-twitter{
- background-image: url('/assets/img/asset\ 33.png');
+ background-image: url('{{ site.baseurl }}/assets/img/asset\ 33.png');
 }
 
 .icon-linkedin{
-  background-image: url('/assets/img/asset\ 34.png');
+  background-image: url('{{ site.baseurl }}/assets/img/asset\ 34.png');
 }
 .icon-rss{
-  background-image: url('/assets/img/asset\ 35.png');
+  background-image: url('{{ site.baseurl }}/assets/img/asset\ 35.png');
 }
 
 .icon-flickr{
-  background-image: url('/assets/img/asset\ 36.png');
+  background-image: url('{{ site.baseurl }}/assets/img/asset\ 36.png');
 }
 
 .icon-youtube{
-  background-image: url('/assets/img/asset\ 37.png');
+  background-image: url('{{ site.baseurl }}/assets/img/asset\ 37.png');
 }
 .icon-instagram{
-  background-image: url('/assets/img/asset\ 38.png');
+  background-image: url('{{ site.baseurl }}/assets/img/asset\ 38.png');
 }
 .icon-tiktok{
-  background-image: url('/assets/img/asset\ 39.png');
+  background-image: url('{{ site.baseurl }}/assets/img/asset\ 39.png');
 }
 
 /*CSS para el menu*/
@@ -647,7 +646,7 @@ p {
       nav.menu-horizontal > ul > li ul.open{ display: block !important; opacity: 1 !important;  height: auto; }
       nav.menu-horizontal > ul > li > ul.open > li > ul.open{ padding-left: 20px; }
       nav.menu-horizontal > ul > li ul{ display: block;  }
-      nav.menu-horizontal > ul > li .submenu-button {  background: url(../img/down.png) top center no-repeat;  display: block;  float: right;  height: 20px; width: 20px; margin-right:22px; background-size: 10px; background-position: 10px 10px; position: absolute; right: 10px; }
+      nav.menu-horizontal > ul > li .submenu-button {  background: url('{{ site.baseurl }}/img/down.png') top center no-repeat;  display: block;  float: right;  height: 20px; width: 20px; margin-right:22px; background-size: 10px; background-position: 10px 10px; position: absolute; right: 10px; }
       nav.menu-horizontal > ul > li > ul > li .submenu-button{ right: 15px; }
       nav.menu-horizontal > ul > li > ul > li >ul > li .submenu-button{ right: 20px; }
       nav.menu-horizontal ul li{ float: none; border-top: solid thin #ccc; width:100%; }
@@ -657,7 +656,7 @@ p {
     nav#menu-principal > ul > li ul.open{ display: block !important; opacity: 1 !important;  height: auto; }
     nav#menu-principal > ul > li > ul.open > li > ul.open{ padding-left: 20px; }
     nav#menu-principal > ul > li ul{ display: block;  }
-    nav#menu-principal > ul > li .submenu-button {  background: url(../img/down.png) top center no-repeat;  display: block;  float: right;  height: 20px; width: 20px; margin-right:22px; background-size: 10px; background-position: 10px 10px; position: absolute; right: 10px; }
+    nav#menu-principal > ul > li .submenu-button {  background: url('{{ site.baseurl }}/img/down.png') top center no-repeat;  display: block;  float: right;  height: 20px; width: 20px; margin-right:22px; background-size: 10px; background-position: 10px 10px; position: absolute; right: 10px; }
     nav#menu-principal > ul > li > ul > li .submenu-button{ right: 15px; }
     nav#menu-principal > ul > li > ul > li >ul > li .submenu-button{ right: 20px; }
     nav#menu-principal ul li{ float: none; border-top: solid thin #ccc; width:100%;height: auto; }
@@ -1099,7 +1098,7 @@ header .current-date {
 }
 
 .icon-info {
-  background: url('/assets/img/icon-info.png');
+  background: url('{{ site.baseurl }}/assets/img/icon-info.png');
   width: 22.5625px; /* Ajusta el ancho según sea necesario */
   height: 30px; /* Ajusta la altura según sea necesario */
   background-position: 50% 50%;
@@ -1782,7 +1781,3 @@ header .current-date {
   }
 }
 
-/* Estilos para pantallas más grandes (ajustes opcionales) */
-@media (min-width: 769px) {
-  /* Ajustes para pantallas más grandes si es necesario */
-}

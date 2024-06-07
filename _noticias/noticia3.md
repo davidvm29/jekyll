@@ -5,5 +5,4 @@ title_en: "The Andalusian rectors address the new degree map and ask for equalit
 image: "/assets/img/asset 20.jpeg"
 description: "Descripción de la imagen 1"
 link: "/contenido3"
-url: "https://www.ejemplo.com/pagina1.html"
 ---

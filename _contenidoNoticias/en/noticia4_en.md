@@ -21,17 +21,8 @@ The THE Ranking, one of the most prestigious internationally, lists a total of 1
 
 At a global level, the UCO rises positions in this post-covid era where research work seriously suffered from the pandemic.
 
-| World University Ranking 2023 | España | Andalucía |
-|-------------------------------|--------|-----------|
-| 744/1904                      | 16/60  | 2/8       |
-
 This positioning is due to the growth, in general, of the aforementioned indicators, increasing scores in four of the five analyzed and going from a final score of 34.34 in the 2023 ranking to 38.11 in this last 2024 ranking (11% ).
 
 **Scores by groups of indicators**
-
-|       | Teaching | Research Environment | Research Quality | Industry Income | International Outlook |
-|-------|----------|----------------------|------------------|-----------------|-----------------------|
-| 2023  | 22,7     | 21,2                 | 56,0             | 39,4            | 47,5                  |
-| 2024  | 27,0     | 19,9                 | 62,6             | 41,9            | 52,3                  |
 
 The research and teaching health of the University of Córdoba continues to have an impact on international rankings despite the difficult past period. At a time when the world situation in every sense is beginning to regain inertia, research activity is beginning to show signs of the efforts of the research staff at the University of Córdoba.

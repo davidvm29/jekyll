@@ -5,7 +5,7 @@
     <title>UCO-i02vimod</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -13,7 +13,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
     <script src="https://cdn.jsdelivr.net/npm/algoliasearch@4.9.0/dist/algoliasearch-lite.umd.js"></script>
-    <script src="/assets/js/search.js"></script>
   </head>
 <body>
     <div id="top-bar">
@@ -25,21 +24,30 @@
                 <a class="boton-buscar"></a>
                 <label for="q" style="display:none">Buscar</label>
                 <input type="text" size="10" placeholder="" name="q" id="q">
-                <input type="button" value="{{ site.data[page.idioma].buscar }}" class="btn-buscar" onclick="buscarYRedirigir()">
+                <input type="button" value="{{ site.data[page.idioma].buscar }}" class="btn-buscar" onclick="buscarYRedirigir('{{page.idioma}}')">
         </div>
 <ul class="nav justify-content-center" id="results-container"></ul>
     </div>
 
 <!-- Botones de enlace a páginas externas -->
 <div class="external-buttons">
-<a href="{{ site.baseurl }}/index.html"><img src="/assets/img/asset0.png" alt="Botón 1"></a>
-<a href="{{ site.baseurl }}/acercanuevo.html"><img src="/assets/img/asset1.png" alt="Botón 2"></a>
+  {% if page.idioma == "es" %}
+    <a href="{{ site.baseurl }}/index.html"><img src="{{ site.baseurl }}/assets/img/asset0.png" alt="Botón 1"></a>
+  {% else %}
+    <a href="{{ site.baseurl }}/en.html"><img src="{{ site.baseurl }}/assets/img/asset0.png" alt="Botón 1"></a>
+  {% endif %}
+  <a href="{{ site.baseurl }}/acercanuevo.html"><img src="{{ site.baseurl }}/assets/img/asset1.png" alt="Botón 2"></a>
 
 </div>
 
 <nav class="row" id="menu-principal"><div id="menu-button" style="display:block;" bis_skin_checked="1">Menú</div>
   <ul class="open">
-      <li><a href="{{ site.baseurl }}/index.html">{{ site.data[page.idioma].inicio}}</a></li>
+    {% if page.idioma == "es" %}
+        <li><a href="{{ site.baseurl }}/index.html">{{ site.data[page.idioma].inicio }}</a></li>
+    {% else %}
+        <li><a href="{{ site.baseurl }}/en.html">{{ site.data[page.idioma].inicio }}</a></li>
+    {% endif %}
+
       <li><a href="#">{{ site.data[page.idioma].vida_academica}}</a></li>
       <li><a href="#">{{ site.data[page.idioma].ciencia}}</a></li>
       <li><a href="#">{{ site.data[page.idioma].institucional}}</a></li>
@@ -169,7 +177,7 @@
           <div class="noticias-interes"><a class="enlaces-interes" href="/servicios/actualidad/uco-imagen-corporativa" >{{ site.data[page.idioma].consultas_accesibilidad}}</a></div>
         </nav>
       </div>
-  <a href="#"><img style="height: 100px; width: 282px;"src="/assets/img/como-llegar.jpg"></a>
+  <a href="#"><img style="height: 100px; width: 282px;"src="{{ site.baseurl }}/assets/img/como-llegar.jpg"></a>
 	</section>
   </section>
 

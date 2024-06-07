@@ -5,7 +5,6 @@ title_en: "The University of Córdoba, among the 800 best universities in the wo
 image: "/assets/img/asset 21.jpeg"
 description: "Descripción de la imagen 1"
 link: "/contenido4"
-url: "https://www.ejemplo.com/pagina1.html"
 ---
 
 
