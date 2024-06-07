@@ -119,44 +119,37 @@
       </span>
     </div>
 
-    <div class="itemRelated">
-      <h3>{{ site.data[page.idioma].articulos_relacionados}}</h3>
-      <ul>
-        {% assign current_tags = page.hastag | split: ' ' %}
-        {% for post in site.contenidoNoticias %}
-          {% if post.idioma == page.idioma %}
-            {% assign post_tags = post.hastag | split: ' ' %}
-            {% assign common_tags = "" %}
-            {% assign remaining_tags = current_tags %}
-            
-            {% for tag in post_tags %}
-              {% if remaining_tags contains tag %}
-                {% assign common_tags = common_tags | append: tag | append: ' ' %}
-                {% assign remaining_tags = remaining_tags | remove: tag | remove: ' ' %}
-              {% endif %}
-            {% endfor %}
-            
-            {% if common_tags.size > 0 and remaining_tags.size > 0 and post.url != page.url %}
-              <li>
-                <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | replace: '_', ' ' }}</a>
-              </li>
-            {% endif %}
-          {% endif %}
-        {% endfor %}
-      </ul>
-      
-    </div>
+    {% assign link_count = 0 %}
 
-    <div class="itemNavigation">
-      <span class="itemNavigationTitle">{{ site.data[page.idioma].mas_categoria}}</span>
-  
-      {% assign current_tags = page.Lugar_publicacion | split: ' ' %}
+{% assign current_tags = page.hastag | split: ' ' %}
+{% for post in site.contenidoNoticias %}
+  {% if post.idioma == page.idioma %}
+    {% assign post_tags = post.hastag | split: ' ' %}
+    {% assign common_tags = "" %}
+    {% assign remaining_tags = current_tags %}
+    
+    {% for tag in post_tags %}
+      {% if remaining_tags contains tag %}
+        {% assign common_tags = common_tags | append: tag | append: ' ' %}
+        {% assign remaining_tags = remaining_tags | remove: tag | remove: ' ' %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if common_tags.size > 0 and remaining_tags.size > 0 and post.url != page.url %}
+      {% assign link_count = link_count | plus: 1 %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if link_count > 0 %}
+  <div class="itemRelated">
+    <h3>{{ site.data[page.idioma].articulos_relacionados }}</h3>
+    <ul>
       {% assign link_count = 0 %}
-
+      {% assign current_tags = page.hastag | split: ' ' %}
       {% for post in site.contenidoNoticias %}
-
         {% if post.idioma == page.idioma %}
-          {% assign post_tags = post.Lugar_publicacion | split: ' ' %}
+          {% assign post_tags = post.hastag | split: ' ' %}
           {% assign common_tags = "" %}
           {% assign remaining_tags = current_tags %}
           
@@ -167,13 +160,68 @@
             {% endif %}
           {% endfor %}
           
-          {% if common_tags.size > 0 and remaining_tags.size > 0 and post.url != page.url and link_count < 4 %}
-            {% assign link_count = link_count | plus: 1 %}
-            <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | replace: '_', ' ' }}</a>
+          {% if common_tags.size > 0 and remaining_tags.size > 0 and post.url != page.url %}
+            <li>
+              <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | replace: '_', ' ' }}</a>
+            </li>
           {% endif %}
         {% endif %}
       {% endfor %}
-    </div>
+    </ul>
+  </div>
+{% endif %}
+
+
+    {% assign link_count = 0 %}
+
+{% for post in site.contenidoNoticias %}
+  {% if post.idioma == page.idioma %}
+    {% assign post_tags = post.Lugar_publicacion | split: ' ' %}
+    {% assign common_tags = "" %}
+    {% assign remaining_tags = page.Lugar_publicacion | split: ' ' %}
+    
+    {% for tag in post_tags %}
+      {% if remaining_tags contains tag %}
+        {% assign common_tags = common_tags | append: tag | append: ' ' %}
+        {% assign remaining_tags = remaining_tags | remove: tag | remove: ' ' %}
+      {% endif %}
+    {% endfor %}
+    
+    {% if common_tags.size > 0 and remaining_tags.size > 0 and post.url != page.url and link_count < 4 %}
+      {% assign link_count = link_count | plus: 1 %}
+    {% endif %}
+  {% endif %}
+{% endfor %}
+
+{% if link_count > 0 %}
+  <div class="itemNavigation">
+    <span class="itemNavigationTitle">{{ site.data[page.idioma].mas_categoria }}</span>
+
+    {% assign current_tags = page.Lugar_publicacion | split: ' ' %}
+    {% assign link_count = 0 %}
+
+    {% for post in site.contenidoNoticias %}
+      {% if post.idioma == page.idioma %}
+        {% assign post_tags = post.Lugar_publicacion | split: ' ' %}
+        {% assign common_tags = "" %}
+        {% assign remaining_tags = current_tags %}
+        
+        {% for tag in post_tags %}
+          {% if remaining_tags contains tag %}
+            {% assign common_tags = common_tags | append: tag | append: ' ' %}
+            {% assign remaining_tags = remaining_tags | remove: tag | remove: ' ' %}
+          {% endif %}
+        {% endfor %}
+        
+        {% if common_tags.size > 0 and remaining_tags.size > 0 and post.url != page.url and link_count < 4 %}
+          {% assign link_count = link_count | plus: 1 %}
+          <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title | replace: '_', ' ' }}</a>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </div>
+{% endif %}
+
 
     <div class="itemBackToTop">
       <a class="k2Anchor" href="javascript:void(0);" onclick="scrollToTop()"> {{ site.data[page.idioma].volver_arriba}}</a>

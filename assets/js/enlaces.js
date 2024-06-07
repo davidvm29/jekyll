@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
             htmlContent += '<a id="lugar" href="#">  ' + lugarFormateado + ' ' + '</a>';
             if (idioma === "es") {
-                htmlContent += '<a href="' + baseUrl + enlace.enlace + '">&nbsp;Leer más...</a>';
+                htmlContent += '<a href="' + baseUrl + enlace.enlace.replace('_en','_es') + '">&nbsp;Leer más...</a>';
             } else {
-                htmlContent += '<a href="' + baseUrl + enlace.enlace + '">&nbsp;Read more...</a>';
+                htmlContent += '<a href="' + baseUrl + enlace.enlace.replace('_es', '_en') + '">&nbsp;Read more...</a>';
             }
             htmlContent += '</div>';
             htmlContent += '</div>';
