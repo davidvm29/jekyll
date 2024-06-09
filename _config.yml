@@ -17,7 +17,7 @@ title: Recreacion UCO
 email: i02vimod@uco.es
 description: Recreacion UCO Jekyll
 baseurl: "/jekyll" # the subpath of your site, e.g. /blog
-
+url: "https://davidvm29.github.io/jekyll"
 # Build settings
 markdown: kramdown
 theme: minima
